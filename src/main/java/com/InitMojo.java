@@ -30,12 +30,24 @@ public class InitMojo extends AbstractMojo {
 
         // 1. Create a mini-model using the ORIGINAL dependencies (pre-flattening)
         // Using getOriginalModel() ensures we capture what the user actually wrote
+// 1. Create a mini-model
         Model lockModel = new Model();
         lockModel.setModelVersion("4.0.0");
         lockModel.setGroupId(project.getGroupId());
         lockModel.setArtifactId(project.getArtifactId() + "-dependencies");
         lockModel.setVersion(project.getVersion());
-        lockModel.setDependencies(project.getOriginalModel().getDependencies());
+
+        // CHANGE: Use the resolved dependencies list from the project context
+        // These will have the ${...} placeholders already replaced with real versions.
+        lockModel.setDependencies(project.getDependencies());
+
+        // Keep your dependencyManagement injection
+        // Gets only what's in THIS pom.xml, not inherited/imported entries
+        org.apache.maven.model.DependencyManagement dm = 
+            project.getOriginalModel().getDependencyManagement();
+        if (dm != null) {
+            lockModel.setDependencyManagement(dm);
+        }
 
         // 2. Write the handle to disk
         MavenXpp3Writer writer = new MavenXpp3Writer();

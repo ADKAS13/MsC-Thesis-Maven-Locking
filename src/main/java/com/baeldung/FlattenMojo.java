@@ -69,14 +69,15 @@ public void execute() throws MojoExecutionException {
         }
     }
 
-    private void writeToMainPom(List<Dependency> deps) throws Exception {
-        Model model = project.getOriginalModel();
-        model.setDependencies(deps);
-        
-        File pomFile = project.getFile();
-        try (FileWriter writer = new FileWriter(pomFile)) {
-            new MavenXpp3Writer().write(writer, model);
-            getLog().info("Main POM flattened with resolved versions.");
-        }
+private void writeToMainPom(List<Dependency> deps) throws Exception {
+    Model model = project.getOriginalModel();
+    model.setDependencies(deps);
+
+    // 4. Overwrite the POM file
+    File pomFile = project.getFile();
+    try (FileWriter writer = new FileWriter(pomFile)) {
+        new MavenXpp3Writer().write(writer, model);
+        getLog().info("Main POM updated with resolved dependencies AND management section.");
     }
+}
 }
