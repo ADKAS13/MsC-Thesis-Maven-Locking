@@ -30,7 +30,6 @@ public class InitMojo extends AbstractMojo {
 
         // 1. Create a mini-model using the ORIGINAL dependencies (pre-flattening)
         // Using getOriginalModel() ensures we capture what the user actually wrote
-// 1. Create a mini-model
         Model lockModel = new Model();
         lockModel.setModelVersion("4.0.0");
         lockModel.setGroupId(project.getGroupId());

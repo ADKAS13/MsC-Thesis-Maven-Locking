@@ -20,39 +20,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mojo(name = "flatten")
-public class FlattenMojo extends AbstractMojo {
+	public class FlattenMojo extends AbstractMojo {
 
-    @Parameter(defaultValue = "${project}", readonly = true, required = true)
-    private MavenProject project;
+		@Parameter(defaultValue = "${project}", readonly = true, required = true)
+		private MavenProject project;
 
-    @Parameter(defaultValue = "${session}", readonly = true, required = true)
-    private MavenSession session;
+		@Parameter(defaultValue = "${session}", readonly = true, required = true)
+		private MavenSession session;
 
-    @Component
-    private DependencyGraphBuilder dependencyGraphBuilder;
+		@Component
+		private DependencyGraphBuilder dependencyGraphBuilder;
 
-public void execute() throws MojoExecutionException {
-    try {
-        // Create the building request from the current session
-        org.apache.maven.project.ProjectBuildingRequest buildingRequest = 
-            new org.apache.maven.project.DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
-        
-        // Link the specific project to the request
-        buildingRequest.setProject(project);
+	public void execute() throws MojoExecutionException {
+		try {
+			// Create the building request from the current session
+			org.apache.maven.project.ProjectBuildingRequest buildingRequest = 
+				new org.apache.maven.project.DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
+			
+			// Link the specific project to the request
+			buildingRequest.setProject(project);
 
-        // Build the full resolved dependency graph using the request
-        // The 'null' filter means we collect everything
-        DependencyNode rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
-        
-        List<Dependency> flattenedDeps = new ArrayList<>();
-        collectDependencies(rootNode, flattenedDeps);
+			// Build the full resolved dependency graph using the request
+			// The 'null' filter means we collect everything
+			DependencyNode rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
+			
+			List<Dependency> flattenedDeps = new ArrayList<>();
+			collectDependencies(rootNode, flattenedDeps);
 
-        writeToMainPom(flattenedDeps);
+			writeToMainPom(flattenedDeps);
 
-    } catch (Exception e) {
-        throw new MojoExecutionException("Failed to flatten dependencies", e);
-    }
-}
+		} catch (Exception e) {
+			throw new MojoExecutionException("Failed to flatten dependencies", e);
+		}
+	}
 
     private void collectDependencies(DependencyNode node, List<Dependency> list) {
         // Skip the root node (the project itself)
@@ -69,15 +69,25 @@ public void execute() throws MojoExecutionException {
         }
     }
 
-private void writeToMainPom(List<Dependency> deps) throws Exception {
-    Model model = project.getOriginalModel();
-    model.setDependencies(deps);
+	private void writeToMainPom(List<Dependency> deps) throws Exception {
+		// getOriginalModel() gets the "raw" pom.xml
+		Model model = project.getOriginalModel();
+		
+		// 1. Force the flattened dependencies
+		model.setDependencies(deps);
 
-    // 4. Overwrite the POM file
-    File pomFile = project.getFile();
-    try (FileWriter writer = new FileWriter(pomFile)) {
-        new MavenXpp3Writer().write(writer, model);
-        getLog().info("Main POM updated with resolved dependencies AND management section.");
-    }
-}
+		// 2. CRITICAL: Inject the resolved Dependency Management
+		// This ensures that the versions you resolved during 'init' 
+		// are still governing the project.
+		if (project.getDependencyManagement() != null) {
+			model.setDependencyManagement(project.getDependencyManagement());
+		}
+
+		// 3. Overwrite the POM file
+		File pomFile = project.getFile();
+		try (FileWriter writer = new FileWriter(pomFile)) {
+			new MavenXpp3Writer().write(writer, model);
+			getLog().info("Main POM updated with resolved dependencies AND management section.");
+		}
+	}
 }

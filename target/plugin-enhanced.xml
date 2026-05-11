@@ -15,41 +15,6 @@
   <requiredMavenVersion>3.9.6</requiredMavenVersion>
   <mojos>
     <mojo>
-      <goal>dependency-counter</goal>
-      <requiresDirectInvocation>false</requiresDirectInvocation>
-      <requiresProject>true</requiresProject>
-      <requiresReports>false</requiresReports>
-      <aggregator>false</aggregator>
-      <requiresOnline>false</requiresOnline>
-      <inheritedByDefault>true</inheritedByDefault>
-      <phase>compile</phase>
-      <implementation>com.baeldung.DependencyCounterMojo</implementation>
-      <language>java</language>
-      <instantiationStrategy>per-lookup</instantiationStrategy>
-      <executionStrategy>once-per-session</executionStrategy>
-      <threadSafe>false</threadSafe>
-      <parameters>
-        <parameter>
-          <name>project</name>
-          <type>org.apache.maven.project.MavenProject</type>
-          <required>true</required>
-          <editable>false</editable>
-          <description></description>
-        </parameter>
-        <parameter>
-          <name>scope</name>
-          <type>java.lang.String</type>
-          <required>false</required>
-          <editable>true</editable>
-          <description></description>
-        </parameter>
-      </parameters>
-      <configuration>
-        <project implementation="org.apache.maven.project.MavenProject" default-value="${project}"/>
-        <scope implementation="java.lang.String">${scope}</scope>
-      </configuration>
-    </mojo>
-    <mojo>
       <goal>flatten</goal>
       <requiresDirectInvocation>false</requiresDirectInvocation>
       <requiresProject>true</requiresProject>
@@ -113,34 +78,6 @@
       </parameters>
       <configuration>
         <project implementation="org.apache.maven.project.MavenProject" default-value="${project}"/>
-      </configuration>
-    </mojo>
-    <mojo>
-      <goal>touch</goal>
-      <description>Goal which touches a timestamp file.</description>
-      <requiresDirectInvocation>false</requiresDirectInvocation>
-      <requiresProject>true</requiresProject>
-      <requiresReports>false</requiresReports>
-      <aggregator>false</aggregator>
-      <requiresOnline>false</requiresOnline>
-      <inheritedByDefault>true</inheritedByDefault>
-      <phase>process-sources</phase>
-      <implementation>com.baeldung.MyMojo</implementation>
-      <language>java</language>
-      <instantiationStrategy>per-lookup</instantiationStrategy>
-      <executionStrategy>once-per-session</executionStrategy>
-      <threadSafe>false</threadSafe>
-      <parameters>
-        <parameter>
-          <name>outputDirectory</name>
-          <type>java.io.File</type>
-          <required>true</required>
-          <editable>true</editable>
-          <description>Location of the file.</description>
-        </parameter>
-      </parameters>
-      <configuration>
-        <outputDirectory implementation="java.io.File">${project.build.directory}</outputDirectory>
       </configuration>
     </mojo>
   </mojos>
