@@ -27,7 +27,7 @@
     </mojo>
     <mojo>
       <goal>init</goal>
-      <requiresDependencyResolution>compile</requiresDependencyResolution>
+      <requiresDependencyResolution>test</requiresDependencyResolution>
       <requiresDirectInvocation>false</requiresDirectInvocation>
       <requiresProject>true</requiresProject>
       <requiresReports>false</requiresReports>
@@ -39,7 +39,26 @@
       <instantiationStrategy>per-lookup</instantiationStrategy>
       <executionStrategy>once-per-session</executionStrategy>
       <threadSafe>false</threadSafe>
-      <parameters/>
+      <parameters>
+        <parameter>
+          <name>depTreeSnapshotFile</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>File destination for storing the pre-flatten dependency tree snapshot.</description>
+        </parameter>
+        <parameter>
+          <name>useVersionRanges</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>Controls whether versions are written as Maven version ranges instead of pinned concrete versions. The lower bound is always the resolved version. Accepted values: (unset / empty) — concrete pinned version, e.g. 9.4.2 (default) major — allows major, allows minor+patch: [9.4.2,) minor — allows minor+patch: [9.4.2, 9.999999.999999) patch — allows patch: [9.4.2, 9.4.999999) Usage: -DallowVersionRanges=minor</description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <depTreeSnapshotFile implementation="java.io.File" default-value="${project.build.directory}/dependency-tree-before.txt">${depTreeSnapshotFile}</depTreeSnapshotFile>
+        <useVersionRanges implementation="java.lang.String" default-value="">${allowVersionRanges}</useVersionRanges>
+      </configuration>
     </mojo>
   </mojos>
 </plugin>

@@ -1,0 +1,651 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 10 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 10 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bots                                                               [pom]
+[INFO] Telegram Bots Meta                                                 [jar]
+[INFO] Telegram Bots Long Polling                                         [jar]
+[INFO] Telegram Bots Webhook                                              [jar]
+[INFO] Telegram Bots Client                                               [jar]
+[INFO] Telegram Bots Long polling Spring Boot Starter                     [jar]
+[INFO] Telegram Bots Webhook Spring Boot Starter                          [jar]
+[INFO] Telegram Bots Extensions                                           [jar]
+[INFO] Telegram Ability Bot                                               [jar]
+[INFO] Telegram Bots Test Reports                                         [pom]
+[INFO] 
+[INFO] -------------------------< org.telegram:Bots >--------------------------
+[INFO] Building Bots 7.7.0                                               [1/10]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ Bots ---
+[INFO] org.telegram:Bots:pom:7.7.0
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] -------------------< org.telegram:telegrambots-meta >-------------------
+[INFO] Building Telegram Bots Meta 7.7.0                                 [2/10]
+[INFO]   from telegrambots-meta/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-meta ---
+[INFO] org.telegram:telegrambots-meta:jar:7.7.0
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ---------------< org.telegram:telegrambots-longpolling >----------------
+[INFO] Building Telegram Bots Long Polling 7.7.0                         [3/10]
+[INFO]   from telegrambots-longpolling/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-longpolling ---
+[INFO] org.telegram:telegrambots-longpolling:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |  +- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |  |  \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |  |     \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+[INFO] |  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |     +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |     |  \- org.jetbrains:annotations:jar:13.0:compile
+[INFO] |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] +- com.squareup.okhttp3:mockwebserver:jar:4.12.0:test
+[INFO] |  \- junit:junit:jar:4.13.2:test
+[INFO] |     \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.awaitility:awaitility:jar:4.2.0:test
+[INFO] |  \- org.hamcrest:hamcrest:jar:2.1:test
+[INFO] +- ch.qos.logback:logback-classic:jar:1.5.0:test
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.5.0:test
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] -----------------< org.telegram:telegrambots-webhook >------------------
+[INFO] Building Telegram Bots Webhook 7.7.0                              [4/10]
+[INFO]   from telegrambots-webhook/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-webhook ---
+[INFO] org.telegram:telegrambots-webhook:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- commons-io:commons-io:jar:2.15.1:compile
+[INFO] +- io.javalin:javalin:jar:6.1.3:compile
+[INFO] |  +- org.eclipse.jetty:jetty-server:jar:11.0.20:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-http:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty:jetty-util:jar:11.0.19:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-io:jar:11.0.20:compile
+[INFO] |  |  \- org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2:compile
+[INFO] |  +- org.eclipse.jetty.websocket:websocket-jetty-server:jar:11.0.20:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-servlet:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty:jetty-security:jar:11.0.20:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-webapp:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty:jetty-xml:jar:11.0.20:compile
+[INFO] |  |  +- org.eclipse.jetty.websocket:websocket-jetty-api:jar:11.0.20:compile
+[INFO] |  |  +- org.eclipse.jetty.websocket:websocket-jetty-common:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.websocket:websocket-core-common:jar:11.0.20:compile
+[INFO] |  |  \- org.eclipse.jetty.websocket:websocket-servlet:jar:11.0.20:compile
+[INFO] |  |     \- org.eclipse.jetty.websocket:websocket-core-server:jar:11.0.20:compile
+[INFO] |  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |     +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |     |  \- org.jetbrains:annotations:jar:24.1.0:compile
+[INFO] |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] +- io.javalin.community.ssl:ssl-plugin:jar:6.1.3:compile
+[INFO] |  +- org.eclipse.jetty.http2:http2-server:jar:11.0.20:compile
+[INFO] |  |  \- org.eclipse.jetty.http2:http2-common:jar:11.0.20:compile
+[INFO] |  |     \- org.eclipse.jetty.http2:http2-hpack:jar:11.0.20:compile
+[INFO] |  +- org.eclipse.jetty:jetty-alpn-conscrypt-server:jar:11.0.20:compile
+[INFO] |  |  +- org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile
+[INFO] |  |  \- org.eclipse.jetty:jetty-alpn-server:jar:11.0.20:compile
+[INFO] |  +- org.eclipse.jetty:jetty-alpn-java-server:jar:11.0.20:compile
+[INFO] |  +- io.github.hakky54:sslcontext-kickstart:jar:8.3.2:compile
+[INFO] |  +- io.github.hakky54:sslcontext-kickstart-for-pem:jar:8.3.2:compile
+[INFO] |  |  \- org.bouncycastle:bcpkix-jdk18on:jar:1.77:compile
+[INFO] |  |     +- org.bouncycastle:bcprov-jdk18on:jar:1.77:compile
+[INFO] |  |     \- org.bouncycastle:bcutil-jdk18on:jar:1.77:compile
+[INFO] |  \- io.github.hakky54:sslcontext-kickstart-for-jetty:jar:8.3.2:compile
+[INFO] +- org.junit.jupiter:junit-jupiter:jar:5.10.2:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |  |  +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |  |  \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-params:jar:5.10.2:test
+[INFO] +- io.javalin:javalin-testtools:jar:6.1.3:test
+[INFO] +- com.squareup.okhttp3:okhttp:jar:4.12.0:test
+[INFO] |  \- com.squareup.okio:okio:jar:3.6.0:test
+[INFO] |     \- com.squareup.okio:okio-jvm:jar:3.6.0:test
+[INFO] |        \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:test
+[INFO] +- ch.qos.logback:logback-classic:jar:1.5.0:test
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.5.0:test
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ------------------< org.telegram:telegrambots-client >------------------
+[INFO] Building Telegram Bots Client 7.7.0                               [5/10]
+[INFO]   from telegrambots-client/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-client ---
+[INFO] org.telegram:telegrambots-client:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |  +- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |  |  \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |  |     \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+[INFO] |  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |     +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |     |  \- org.jetbrains:annotations:jar:13.0:compile
+[INFO] |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] +- commons-io:commons-io:jar:2.15.1:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- com.squareup.okhttp3:mockwebserver:jar:4.12.0:test
+[INFO] |  \- junit:junit:jar:4.13.2:test
+[INFO] |     \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ------< org.telegram:telegrambots-springboot-longpolling-starter >------
+[INFO] Building Telegram Bots Long polling Spring Boot Starter 7.7.0     [6/10]
+[INFO]   from telegrambots-springboot-longpolling-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-springboot-longpolling-starter ---
+[INFO] org.telegram:telegrambots-springboot-longpolling-starter:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-longpolling:jar:7.7.0:compile
+[INFO] |  +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.15.4:compile
+[INFO] |  |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.15.4:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] |  \- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |     +- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |     |  \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |     |     \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.22:compile
+[INFO] |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |        +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |        |  \- org.jetbrains:annotations:jar:13.0:compile
+[INFO] |        \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- org.springframework.boot:spring-boot:jar:3.2.3:compile
+[INFO] |  +- org.springframework:spring-core:jar:6.1.4:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.1.4:compile
+[INFO] |  \- org.springframework:spring-context:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-aop:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-beans:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-expression:jar:6.1.4:compile
+[INFO] |     \- io.micrometer:micrometer-observation:jar:1.12.3:compile
+[INFO] |        \- io.micrometer:micrometer-commons:jar:1.12.3:compile
+[INFO] +- org.springframework.boot:spring-boot-autoconfigure:jar:3.2.3:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.2.3:test
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:3.2.3:test
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.2.3:test
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.4.14:test
+[INFO] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.4.14:test
+[INFO] |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.21.1:test
+[INFO] |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.21.1:test
+[INFO] |  |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.12:test
+[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:test
+[INFO] |  |  \- org.yaml:snakeyaml:jar:2.2:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.2.3:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.2.3:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.9.0:test
+[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.1:test
+[INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.2:test
+[INFO] |  +- net.minidev:json-smart:jar:2.5.0:test
+[INFO] |  |  \- net.minidev:accessors-smart:jar:2.5.0:test
+[INFO] |  |     \- org.ow2.asm:asm:jar:9.3:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.24.2:test
+[INFO] |  +- org.awaitility:awaitility:jar:4.2.0:test
+[INFO] |  +- org.hamcrest:hamcrest:jar:2.2:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter:jar:5.10.2:test
+[INFO] |  |  \- org.junit.jupiter:junit-jupiter-params:jar:5.10.2:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.1:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:6.1.4:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.9.1:test
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.12:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.12:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] --------< org.telegram:telegrambots-springboot-webhook-starter >--------
+[INFO] Building Telegram Bots Webhook Spring Boot Starter 7.7.0          [7/10]
+[INFO]   from telegrambots-springboot-webhook-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-springboot-webhook-starter ---
+[INFO] org.telegram:telegrambots-springboot-webhook-starter:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- org.springframework.boot:spring-boot:jar:3.2.3:compile
+[INFO] |  +- org.springframework:spring-core:jar:6.1.4:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.1.4:compile
+[INFO] |  \- org.springframework:spring-context:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-aop:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-beans:jar:6.1.4:compile
+[INFO] |     +- org.springframework:spring-expression:jar:6.1.4:compile
+[INFO] |     \- io.micrometer:micrometer-observation:jar:1.12.3:compile
+[INFO] |        \- io.micrometer:micrometer-commons:jar:1.12.3:compile
+[INFO] +- org.springframework.boot:spring-boot-autoconfigure:jar:3.2.3:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:3.2.3:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:3.2.3:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.2.3:compile
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.4.14:compile
+[INFO] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.4.14:compile
+[INFO] |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.21.1:compile
+[INFO] |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.21.1:compile
+[INFO] |  |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.12:compile
+[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:2.2:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-json:jar:3.2.3:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.15.4:compile
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.15.4:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:3.2.3:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.19:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.19:compile
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.19:compile
+[INFO] |  +- org.springframework:spring-web:jar:6.1.4:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:6.1.4:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.2.3:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.2.3:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.2.3:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.9.0:test
+[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.1:test
+[INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.2:test
+[INFO] |  +- net.minidev:json-smart:jar:2.5.0:test
+[INFO] |  |  \- net.minidev:accessors-smart:jar:2.5.0:test
+[INFO] |  |     \- org.ow2.asm:asm:jar:9.3:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.24.2:test
+[INFO] |  +- org.awaitility:awaitility:jar:4.2.0:test
+[INFO] |  +- org.hamcrest:hamcrest:jar:2.2:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.1:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:6.1.4:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.9.1:test
+[INFO] +- org.junit.jupiter:junit-jupiter:jar:5.10.2:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |  |  +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |  |  \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-params:jar:5.10.2:test
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.12:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.12:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ----------------< org.telegram:telegrambots-extensions >----------------
+[INFO] Building Telegram Bots Extensions 7.7.0                           [8/10]
+[INFO]   from telegrambots-extensions/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-extensions ---
+[INFO] org.telegram:telegrambots-extensions:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-webhook:jar:7.7.0:compile
+[INFO] |  +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] |  +- commons-io:commons-io:jar:2.15.1:compile
+[INFO] |  +- io.javalin:javalin:jar:6.1.3:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-server:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-http:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-util:jar:11.0.19:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-io:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2:compile
+[INFO] |  |  +- org.eclipse.jetty.websocket:websocket-jetty-server:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-servlet:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-security:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-webapp:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-xml:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty.websocket:websocket-jetty-api:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty.websocket:websocket-jetty-common:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty.websocket:websocket-core-common:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.websocket:websocket-servlet:jar:11.0.20:compile
+[INFO] |  |  |     \- org.eclipse.jetty.websocket:websocket-core-server:jar:11.0.20:compile
+[INFO] |  |  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |  |     +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |  |     |  \- org.jetbrains:annotations:jar:24.1.0:compile
+[INFO] |  |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] |  \- io.javalin.community.ssl:ssl-plugin:jar:6.1.3:compile
+[INFO] |     +- org.eclipse.jetty.http2:http2-server:jar:11.0.20:compile
+[INFO] |     |  \- org.eclipse.jetty.http2:http2-common:jar:11.0.20:compile
+[INFO] |     |     \- org.eclipse.jetty.http2:http2-hpack:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-conscrypt-server:jar:11.0.20:compile
+[INFO] |     |  +- org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile
+[INFO] |     |  \- org.eclipse.jetty:jetty-alpn-server:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-java-server:jar:11.0.20:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart:jar:8.3.2:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart-for-pem:jar:8.3.2:compile
+[INFO] |     |  \- org.bouncycastle:bcpkix-jdk18on:jar:1.77:compile
+[INFO] |     |     +- org.bouncycastle:bcprov-jdk18on:jar:1.77:compile
+[INFO] |     |     \- org.bouncycastle:bcutil-jdk18on:jar:1.77:compile
+[INFO] |     \- io.github.hakky54:sslcontext-kickstart-for-jetty:jar:8.3.2:compile
+[INFO] +- org.telegram:telegrambots-longpolling:jar:7.7.0:compile
+[INFO] |  \- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |     \- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |        \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |           \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ----------------< org.telegram:telegrambots-abilities >-----------------
+[INFO] Building Telegram Ability Bot 7.7.0                               [9/10]
+[INFO]   from telegrambots-abilities/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-abilities ---
+[INFO] org.telegram:telegrambots-abilities:jar:7.7.0
+[INFO] +- org.telegram:telegrambots-webhook:jar:7.7.0:compile
+[INFO] |  +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  +- commons-io:commons-io:jar:2.15.1:compile
+[INFO] |  +- io.javalin:javalin:jar:6.1.3:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-server:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-http:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-util:jar:11.0.19:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-io:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2:compile
+[INFO] |  |  +- org.eclipse.jetty.websocket:websocket-jetty-server:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-servlet:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-security:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-webapp:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-xml:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty.websocket:websocket-jetty-api:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty.websocket:websocket-jetty-common:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty.websocket:websocket-core-common:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.websocket:websocket-servlet:jar:11.0.20:compile
+[INFO] |  |  |     \- org.eclipse.jetty.websocket:websocket-core-server:jar:11.0.20:compile
+[INFO] |  |  \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |  |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] |  \- io.javalin.community.ssl:ssl-plugin:jar:6.1.3:compile
+[INFO] |     +- org.eclipse.jetty.http2:http2-server:jar:11.0.20:compile
+[INFO] |     |  \- org.eclipse.jetty.http2:http2-common:jar:11.0.20:compile
+[INFO] |     |     \- org.eclipse.jetty.http2:http2-hpack:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-conscrypt-server:jar:11.0.20:compile
+[INFO] |     |  +- org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile
+[INFO] |     |  \- org.eclipse.jetty:jetty-alpn-server:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-java-server:jar:11.0.20:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart:jar:8.3.2:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart-for-pem:jar:8.3.2:compile
+[INFO] |     |  \- org.bouncycastle:bcpkix-jdk18on:jar:1.77:compile
+[INFO] |     |     +- org.bouncycastle:bcprov-jdk18on:jar:1.77:compile
+[INFO] |     |     \- org.bouncycastle:bcutil-jdk18on:jar:1.77:compile
+[INFO] |     \- io.github.hakky54:sslcontext-kickstart-for-jetty:jar:8.3.2:compile
+[INFO] +- org.telegram:telegrambots-longpolling:jar:7.7.0:compile
+[INFO] |  \- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |     \- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |        \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |           \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.30:provided
+[INFO] +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] +- com.google.guava:guava:jar:33.0.0-jre:compile
+[INFO] |  +- com.google.guava:failureaccess:jar:1.0.2:compile
+[INFO] |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] |  +- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] |  +- com.google.errorprone:error_prone_annotations:jar:2.23.0:compile
+[INFO] |  \- com.google.j2objc:j2objc-annotations:jar:2.8:compile
+[INFO] +- org.mapdb:mapdb:jar:3.1.0:compile
+[INFO] |  +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |  |  \- org.jetbrains:annotations:jar:24.1.0:compile
+[INFO] |  +- org.eclipse.collections:eclipse-collections-api:jar:10.4.0:compile
+[INFO] |  +- org.eclipse.collections:eclipse-collections:jar:10.4.0:compile
+[INFO] |  +- org.eclipse.collections:eclipse-collections-forkjoin:jar:10.4.0:compile
+[INFO] |  +- net.jpountz.lz4:lz4:jar:1.3.0:compile
+[INFO] |  \- org.mapdb:elsa:jar:3.0.0-M5:compile
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] 
+[INFO] ---------------< org.telegram:telegrambots-test-reports >---------------
+[INFO] Building Telegram Bots Test Reports 7.7.0                        [10/10]
+[INFO]   from telegrambots-test-reports/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ telegrambots-test-reports ---
+[INFO] org.telegram:telegrambots-test-reports:pom:7.7.0
+[INFO] +- org.telegram:telegrambots-meta:jar:7.7.0:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.16.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.16.1:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.16.1:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.14.0:compile
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.16.1:compile
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.41.0:compile
+[INFO] +- org.telegram:telegrambots-longpolling:jar:7.7.0:compile
+[INFO] |  \- com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[INFO] |     +- com.squareup.okio:okio:jar:3.6.0:compile
+[INFO] |     |  \- com.squareup.okio:okio-jvm:jar:3.6.0:compile
+[INFO] |     |     \- org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:compile
+[INFO] |     \- org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.22:compile
+[INFO] |        \- org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.22:compile
+[INFO] +- org.telegram:telegrambots-webhook:jar:7.7.0:compile
+[INFO] |  +- commons-io:commons-io:jar:2.15.1:compile
+[INFO] |  +- io.javalin:javalin:jar:6.1.3:compile
+[INFO] |  |  +- org.eclipse.jetty:jetty-server:jar:11.0.20:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-http:jar:11.0.20:compile
+[INFO] |  |  |  |  \- org.eclipse.jetty:jetty-util:jar:11.0.19:compile
+[INFO] |  |  |  +- org.eclipse.jetty:jetty-io:jar:11.0.20:compile
+[INFO] |  |  |  \- org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2:compile
+[INFO] |  |  \- org.eclipse.jetty.websocket:websocket-jetty-server:jar:11.0.20:compile
+[INFO] |  |     +- org.eclipse.jetty:jetty-servlet:jar:11.0.20:compile
+[INFO] |  |     |  \- org.eclipse.jetty:jetty-security:jar:11.0.20:compile
+[INFO] |  |     +- org.eclipse.jetty:jetty-webapp:jar:11.0.20:compile
+[INFO] |  |     |  \- org.eclipse.jetty:jetty-xml:jar:11.0.20:compile
+[INFO] |  |     +- org.eclipse.jetty.websocket:websocket-jetty-api:jar:11.0.20:compile
+[INFO] |  |     +- org.eclipse.jetty.websocket:websocket-jetty-common:jar:11.0.20:compile
+[INFO] |  |     |  \- org.eclipse.jetty.websocket:websocket-core-common:jar:11.0.20:compile
+[INFO] |  |     \- org.eclipse.jetty.websocket:websocket-servlet:jar:11.0.20:compile
+[INFO] |  |        \- org.eclipse.jetty.websocket:websocket-core-server:jar:11.0.20:compile
+[INFO] |  \- io.javalin.community.ssl:ssl-plugin:jar:6.1.3:compile
+[INFO] |     +- org.eclipse.jetty.http2:http2-server:jar:11.0.20:compile
+[INFO] |     |  \- org.eclipse.jetty.http2:http2-common:jar:11.0.20:compile
+[INFO] |     |     \- org.eclipse.jetty.http2:http2-hpack:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-conscrypt-server:jar:11.0.20:compile
+[INFO] |     |  +- org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile
+[INFO] |     |  \- org.eclipse.jetty:jetty-alpn-server:jar:11.0.20:compile
+[INFO] |     +- org.eclipse.jetty:jetty-alpn-java-server:jar:11.0.20:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart:jar:8.3.2:compile
+[INFO] |     +- io.github.hakky54:sslcontext-kickstart-for-pem:jar:8.3.2:compile
+[INFO] |     |  \- org.bouncycastle:bcpkix-jdk18on:jar:1.77:compile
+[INFO] |     |     +- org.bouncycastle:bcprov-jdk18on:jar:1.77:compile
+[INFO] |     |     \- org.bouncycastle:bcutil-jdk18on:jar:1.77:compile
+[INFO] |     \- io.github.hakky54:sslcontext-kickstart-for-jetty:jar:8.3.2:compile
+[INFO] +- org.telegram:telegrambots-client:jar:7.7.0:compile
+[INFO] +- org.telegram:telegrambots-springboot-longpolling-starter:jar:7.7.0:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:3.2.3:compile
+[INFO] |  |  +- org.springframework:spring-core:jar:6.1.4:compile
+[INFO] |  |  |  \- org.springframework:spring-jcl:jar:6.1.4:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:6.1.4:compile
+[INFO] |  |     +- org.springframework:spring-aop:jar:6.1.4:compile
+[INFO] |  |     +- org.springframework:spring-beans:jar:6.1.4:compile
+[INFO] |  |     +- org.springframework:spring-expression:jar:6.1.4:compile
+[INFO] |  |     \- io.micrometer:micrometer-observation:jar:1.12.3:compile
+[INFO] |  |        \- io.micrometer:micrometer-commons:jar:1.12.3:compile
+[INFO] |  \- org.springframework.boot:spring-boot-autoconfigure:jar:3.2.3:compile
+[INFO] +- org.telegram:telegrambots-springboot-webhook-starter:jar:7.7.0:compile
+[INFO] |  \- org.springframework.boot:spring-boot-starter-web:jar:3.2.3:compile
+[INFO] |     +- org.springframework.boot:spring-boot-starter:jar:3.2.3:compile
+[INFO] |     |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.2.3:compile
+[INFO] |     |  |  +- ch.qos.logback:logback-classic:jar:1.4.14:compile
+[INFO] |     |  |  |  \- ch.qos.logback:logback-core:jar:1.4.14:compile
+[INFO] |     |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.21.1:compile
+[INFO] |     |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.21.1:compile
+[INFO] |     |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.12:compile
+[INFO] |     |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
+[INFO] |     |  \- org.yaml:snakeyaml:jar:2.2:compile
+[INFO] |     +- org.springframework.boot:spring-boot-starter-json:jar:3.2.3:compile
+[INFO] |     |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.15.4:compile
+[INFO] |     |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.15.4:compile
+[INFO] |     +- org.springframework.boot:spring-boot-starter-tomcat:jar:3.2.3:compile
+[INFO] |     |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.19:compile
+[INFO] |     |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.19:compile
+[INFO] |     |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.19:compile
+[INFO] |     +- org.springframework:spring-web:jar:6.1.4:compile
+[INFO] |     \- org.springframework:spring-webmvc:jar:6.1.4:compile
+[INFO] +- org.telegram:telegrambots-extensions:jar:7.7.0:compile
+[INFO] +- org.telegram:telegrambots-abilities:jar:7.7.0:compile
+[INFO] |  +- com.google.guava:guava:jar:33.0.0-jre:compile
+[INFO] |  |  +- com.google.guava:failureaccess:jar:1.0.2:compile
+[INFO] |  |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] |  |  +- com.google.errorprone:error_prone_annotations:jar:2.23.0:compile
+[INFO] |  |  \- com.google.j2objc:j2objc-annotations:jar:2.8:compile
+[INFO] |  \- org.mapdb:mapdb:jar:3.1.0:compile
+[INFO] |     +- org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.22:compile
+[INFO] |     |  \- org.jetbrains:annotations:jar:24.1.0:compile
+[INFO] |     +- org.eclipse.collections:eclipse-collections-api:jar:10.4.0:compile
+[INFO] |     +- org.eclipse.collections:eclipse-collections:jar:10.4.0:compile
+[INFO] |     +- org.eclipse.collections:eclipse-collections-forkjoin:jar:10.4.0:compile
+[INFO] |     +- net.jpountz.lz4:lz4:jar:1.3.0:compile
+[INFO] |     \- org.mapdb:elsa:jar:3.0.0-M5:compile
+[INFO] +- org.mockito:mockito-core:jar:5.10.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] +- org.mockito:mockito-junit-jupiter:jar:5.10.0:test
+[INFO] |  \- org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test
+[INFO] |     +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |     \- org.junit.platform:junit-platform-commons:jar:1.10.2:test
+[INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test
+[INFO] |  +- org.junit.platform:junit-platform-engine:jar:1.10.2:test
+[INFO] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Bots 7.7.0:
+[INFO] 
+[INFO] Bots ............................................... SUCCESS [  0.750 s]
+[INFO] Telegram Bots Meta ................................. SUCCESS [  0.060 s]
+[INFO] Telegram Bots Long Polling ......................... SUCCESS [  0.080 s]
+[INFO] Telegram Bots Webhook .............................. SUCCESS [  0.237 s]
+[INFO] Telegram Bots Client ............................... SUCCESS [  0.046 s]
+[INFO] Telegram Bots Long polling Spring Boot Starter ..... SUCCESS [  0.148 s]
+[INFO] Telegram Bots Webhook Spring Boot Starter .......... SUCCESS [  0.087 s]
+[INFO] Telegram Bots Extensions ........................... SUCCESS [  0.064 s]
+[INFO] Telegram Ability Bot ............................... SUCCESS [  0.208 s]
+[INFO] Telegram Bots Test Reports ......................... SUCCESS [  0.120 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.047 s
+[INFO] Finished at: 2026-06-30T22:52:34+02:00
+[INFO] ------------------------------------------------------------------------

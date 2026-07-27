@@ -1,0 +1,835 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] AutomataLib                                                        [pom]
+[INFO] AutomataLib :: Build Parent                                        [pom]
+[INFO] AutomataLib :: Commons                                             [pom]
+[INFO] AutomataLib :: Commons :: Utilities                                [jar]
+[INFO] AutomataLib :: Commons :: Settings                                 [jar]
+[INFO] AutomataLib :: Commons :: Smart Collections                        [jar]
+[INFO] AutomataLib :: API                                                 [jar]
+[INFO] AutomataLib :: Core                                                [jar]
+[INFO] AutomataLib :: Serialization                                       [pom]
+[INFO] AutomataLib :: Serialization :: DOT                                [jar]
+[INFO] AutomataLib :: Utilities                                           [jar]
+[INFO] AutomataLib :: Adapters                                            [pom]
+[INFO] AutomataLib :: Adapters :: BRICS                                   [jar]
+[INFO] AutomataLib :: Incremental                                         [jar]
+[INFO] AutomataLib :: Serialization :: ETF                                [jar]
+[INFO] AutomataLib :: Serialization :: FSM                                [jar]
+[INFO] AutomataLib :: Serialization :: TAF                                [jar]
+[INFO] AutomataLib :: Model Checking                                      [pom]
+[INFO] AutomataLib :: Model Checking :: LTSmin                            [jar]
+[INFO] AutomataLib :: Model Checking :: M3C                               [jar]
+[INFO] AutomataLib :: Serialization :: AUT                                [jar]
+[INFO] AutomataLib :: Serialization :: BA                                 [jar]
+[INFO] AutomataLib :: Serialization :: LearnLibV2                         [jar]
+[INFO] AutomataLib :: Serialization :: Mata                               [jar]
+[INFO] AutomataLib :: Serialization :: SAF                                [jar]
+[INFO] AutomataLib :: Visualization                                       [pom]
+[INFO] AutomataLib :: Visualization :: DOT Visualizer                     [jar]
+[INFO] AutomataLib :: Visualization :: JUNG Visualizer                    [jar]
+[INFO] AutomataLib :: Distribution                                        [pom]
+[INFO] AutomataLib :: Archetypes                                          [pom]
+[INFO] AutomataLib :: Archetypes :: Basic                     [maven-archetype]
+[INFO] AutomataLib :: Archetypes :: Complete                  [maven-archetype]
+[INFO] AutomataLib :: Build Config                                        [jar]
+[INFO] AutomataLib :: Examples                                            [jar]
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.3/maven-deploy-plugin-3.1.3.pom
+Progress (1): 767 BProgress (1): 1.7 kBProgress (1): 3.8 kBProgress (1): 8.0 kBProgress (1): 9.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.3/maven-deploy-plugin-3.1.3.pom (9.2 kB at 20 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.3/maven-deploy-plugin-3.1.3.jar
+Progress (1): 0.9/40 kBProgress (1): 2.3/40 kBProgress (1): 3.6/40 kBProgress (1): 5.0/40 kBProgress (1): 6.4/40 kBProgress (1): 7.7/40 kBProgress (1): 9.1/40 kBProgress (1): 10/40 kB Progress (1): 12/40 kBProgress (1): 13/40 kBProgress (1): 15/40 kBProgress (1): 16/40 kBProgress (1): 17/40 kBProgress (1): 19/40 kBProgress (1): 20/40 kBProgress (1): 21/40 kBProgress (1): 23/40 kBProgress (1): 24/40 kBProgress (1): 25/40 kBProgress (1): 27/40 kBProgress (1): 28/40 kBProgress (1): 30/40 kBProgress (1): 31/40 kBProgress (1): 32/40 kBProgress (1): 34/40 kBProgress (1): 35/40 kBProgress (1): 36/40 kBProgress (1): 38/40 kBProgress (1): 39/40 kBProgress (1): 40 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.3/maven-deploy-plugin-3.1.3.jar (40 kB at 546 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/3.11.2/maven-javadoc-plugin-3.11.2.pom
+Progress (1): 772 BProgress (1): 2.7 kBProgress (1): 3.7 kBProgress (1): 7.0 kBProgress (1): 11 kB Progress (1): 14 kBProgress (1): 16 kBProgress (1): 19 kBProgress (1): 21 kBProgress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/3.11.2/maven-javadoc-plugin-3.11.2.pom (21 kB at 457 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/3.11.2/maven-javadoc-plugin-3.11.2.jar
+Progress (1): 0.9/524 kBProgress (1): 2.3/524 kBProgress (1): 6.5/524 kBProgress (1): 11/524 kB Progress (1): 15/524 kBProgress (1): 15/524 kBProgress (1): 20/524 kBProgress (1): 24/524 kBProgress (1): 28/524 kBProgress (1): 32/524 kBProgress (1): 37/524 kBProgress (1): 41/524 kBProgress (1): 45/524 kBProgress (1): 49/524 kBProgress (1): 53/524 kBProgress (1): 58/524 kBProgress (1): 62/524 kBProgress (1): 65/524 kBProgress (1): 69/524 kBProgress (1): 73/524 kBProgress (1): 77/524 kBProgress (1): 82/524 kBProgress (1): 86/524 kBProgress (1): 90/524 kBProgress (1): 94/524 kBProgress (1): 98/524 kBProgress (1): 103/524 kBProgress (1): 107/524 kBProgress (1): 111/524 kBProgress (1): 115/524 kBProgress (1): 120/524 kBProgress (1): 124/524 kBProgress (1): 128/524 kBProgress (1): 130/524 kBProgress (1): 134/524 kBProgress (1): 139/524 kBProgress (1): 143/524 kBProgress (1): 147/524 kBProgress (1): 151/524 kBProgress (1): 155/524 kBProgress (1): 160/524 kBProgress (1): 164/524 kBProgress (1): 180/524 kBProgress (1): 197/524 kBProgress (1): 213/524 kBProgress (1): 229/524 kBProgress (1): 246/524 kBProgress (1): 262/524 kBProgress (1): 279/524 kBProgress (1): 295/524 kBProgress (1): 311/524 kBProgress (1): 328/524 kBProgress (1): 344/524 kBProgress (1): 360/524 kBProgress (1): 377/524 kBProgress (1): 393/524 kBProgress (1): 410/524 kBProgress (1): 426/524 kBProgress (1): 442/524 kBProgress (1): 459/524 kBProgress (1): 475/524 kBProgress (1): 492/524 kBProgress (1): 508/524 kBProgress (1): 524 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/3.11.2/maven-javadoc-plugin-3.11.2.jar (524 kB at 5.0 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/3.3.1/maven-source-plugin-3.3.1.pom
+Progress (1): 773 BProgress (1): 2.3 kBProgress (1): 5.4 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/3.3.1/maven-source-plugin-3.3.1.pom (6.7 kB at 187 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/3.3.1/maven-source-plugin-3.3.1.jar
+Progress (1): 7.7/32 kBProgress (1): 16/32 kB Progress (1): 32 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/3.3.1/maven-source-plugin-3.3.1.jar (32 kB at 894 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/3.8.0/maven-project-info-reports-plugin-3.8.0.pom
+Progress (1): 747 BProgress (1): 2.4 kBProgress (1): 4.4 kBProgress (1): 9.3 kBProgress (1): 13 kB Progress (1): 16 kBProgress (1): 18 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/3.8.0/maven-project-info-reports-plugin-3.8.0.pom (19 kB at 331 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/3.8.0/maven-project-info-reports-plugin-3.8.0.jar
+Progress (1): 16/297 kBProgress (1): 33/297 kBProgress (1): 49/297 kBProgress (1): 66/297 kBProgress (1): 82/297 kBProgress (1): 98/297 kBProgress (1): 115/297 kBProgress (1): 131/297 kBProgress (1): 147/297 kBProgress (1): 164/297 kBProgress (1): 180/297 kBProgress (1): 197/297 kBProgress (1): 213/297 kBProgress (1): 229/297 kBProgress (1): 246/297 kBProgress (1): 262/297 kBProgress (1): 279/297 kBProgress (1): 295/297 kBProgress (1): 297 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/3.8.0/maven-project-info-reports-plugin-3.8.0.jar (297 kB at 5.0 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eluder/coveralls/coveralls-maven-plugin/4.3.0/coveralls-maven-plugin-4.3.0.pom
+Progress (1): 1.1 kBProgress (1): 3.8 kBProgress (1): 8.8 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eluder/coveralls/coveralls-maven-plugin/4.3.0/coveralls-maven-plugin-4.3.0.pom (10 kB at 221 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eluder/eluder-parent/8/eluder-parent-8.pom
+Progress (1): 1.1 kBProgress (1): 3.3 kBProgress (1): 7.9 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eluder/eluder-parent/8/eluder-parent-8.pom (15 kB at 445 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eluder/coveralls/coveralls-maven-plugin/4.3.0/coveralls-maven-plugin-4.3.0.jar
+Progress (1): 8.2/90 kBProgress (1): 25/90 kB Progress (1): 41/90 kBProgress (1): 57/90 kBProgress (1): 74/90 kBProgress (1): 90 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/eluder/coveralls/coveralls-maven-plugin/4.3.0/coveralls-maven-plugin-4.3.0.jar (90 kB at 2.4 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/central/central-publishing-maven-plugin/0.7.0/central-publishing-maven-plugin-0.7.0.pom
+Progress (1): 919 BProgress (1): 4.0 kBProgress (1): 6.6 kBProgress (1): 9.6 kBProgress (1): 14 kB Progress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/central/central-publishing-maven-plugin/0.7.0/central-publishing-maven-plugin-0.7.0.pom (17 kB at 425 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/central/central-publishing-maven-plugin/0.7.0/central-publishing-maven-plugin-0.7.0.jar
+Progress (1): 7.7/111 kBProgress (1): 16/111 kB Progress (1): 32/111 kBProgress (1): 49/111 kBProgress (1): 65/111 kBProgress (1): 81/111 kBProgress (1): 98/111 kBProgress (1): 111 kB                       Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/central/central-publishing-maven-plugin/0.7.0/central-publishing-maven-plugin-0.7.0.jar (111 kB at 3.0 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.28.0/maven-pmd-plugin-3.28.0.pom
+Progress (1): 756 BProgress (1): 2.2 kBProgress (1): 4.6 kBProgress (1): 9.6 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.28.0/maven-pmd-plugin-3.28.0.pom (14 kB at 371 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.28.0/maven-pmd-plugin-3.28.0.jar
+Progress (1): 7.7/159 kBProgress (1): 7.7/159 kBProgress (1): 24/159 kB Progress (1): 40/159 kBProgress (1): 57/159 kBProgress (1): 73/159 kBProgress (1): 90/159 kBProgress (1): 98/159 kBProgress (1): 115/159 kBProgress (1): 131/159 kBProgress (1): 147/159 kBProgress (1): 159 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.28.0/maven-pmd-plugin-3.28.0.jar (159 kB at 3.7 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.9.8.1/spotbugs-maven-plugin-4.9.8.1.pom
+Progress (1): 714 BProgress (1): 2.3 kBProgress (1): 4.9 kBProgress (1): 6.9 kBProgress (1): 8.7 kBProgress (1): 13 kB Progress (1): 18 kBProgress (1): 23 kBProgress (1): 27 kBProgress (1): 32 kBProgress (1): 37 kBProgress (1): 42 kBProgress (1): 48 kBProgress (1): 50 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.9.8.1/spotbugs-maven-plugin-4.9.8.1.pom (50 kB at 1.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/hazendaz/base-parent/55/base-parent-55.pom
+Progress (1): 805 BProgress (1): 3.2 kBProgress (1): 5.2 kBProgress (1): 7.5 kBProgress (1): 9.2 kBProgress (1): 11 kB Progress (1): 13 kBProgress (1): 16 kBProgress (1): 21 kBProgress (1): 26 kBProgress (1): 30 kBProgress (1): 35 kBProgress (1): 37 kBProgress (1): 43 kBProgress (1): 49 kBProgress (1): 49 kBProgress (1): 58 kBProgress (1): 63 kBProgress (1): 69 kBProgress (1): 76 kBProgress (1): 80 kBProgress (1): 87 kBProgress (1): 93 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/hazendaz/base-parent/55/base-parent-55.pom (93 kB at 1.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/5.0.2/groovy-bom-5.0.2.pom
+Progress (1): 859 BProgress (1): 3.5 kBProgress (1): 7.0 kBProgress (1): 11 kB Progress (1): 14 kBProgress (1): 18 kBProgress (1): 22 kBProgress (1): 27 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/5.0.2/groovy-bom-5.0.2.pom (27 kB at 619 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/6.0.0/junit-bom-6.0.0.pom
+Progress (1): 918 BProgress (1): 4.3 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/6.0.0/junit-bom-6.0.0.pom (5.1 kB at 131 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.9.8.1/spotbugs-maven-plugin-4.9.8.1.jar
+Progress (1): 7.7/198 kBProgress (1): 16/198 kB Progress (1): 32/198 kBProgress (1): 49/198 kBProgress (1): 61/198 kBProgress (1): 77/198 kBProgress (1): 93/198 kBProgress (1): 110/198 kBProgress (1): 126/198 kBProgress (1): 131/198 kBProgress (1): 147/198 kBProgress (1): 164/198 kBProgress (1): 180/198 kBProgress (1): 197/198 kBProgress (1): 198 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-maven-plugin/4.9.8.1/spotbugs-maven-plugin-4.9.8.1.jar (198 kB at 5.0 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.13/jacoco-maven-plugin-0.8.13.pom
+Progress (1): 870 BProgress (1): 3.3 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.13/jacoco-maven-plugin-0.8.13.pom (4.2 kB at 132 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.13/org.jacoco.build-0.8.13.pom
+Progress (1): 799 BProgress (1): 2.9 kBProgress (1): 4.7 kBProgress (1): 8.3 kBProgress (1): 13 kB Progress (1): 16 kBProgress (1): 19 kBProgress (1): 22 kBProgress (1): 25 kBProgress (1): 28 kBProgress (1): 30 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 46 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.13/org.jacoco.build-0.8.13.pom (46 kB at 1.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-bom/9.8/asm-bom-9.8.pom
+Progress (1): 1.1 kBProgress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-bom/9.8/asm-bom-9.8.pom (3.3 kB at 99 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.13/jacoco-maven-plugin-0.8.13.jar
+Progress (1): 3.2/57 kBProgress (1): 20/57 kB Progress (1): 28/57 kBProgress (1): 44/57 kBProgress (1): 57 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.13/jacoco-maven-plugin-0.8.13.jar (57 kB at 1.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.pom
+Progress (1): 809 BProgress (1): 2.3 kBProgress (1): 3.2 kBProgress (1): 7.1 kBProgress (1): 9.3 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.pom (15 kB at 447 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.jar
+Progress (1): 7.7/240 kBProgress (1): 16/240 kB Progress (1): 25/240 kBProgress (1): 41/240 kBProgress (1): 57/240 kBProgress (1): 74/240 kBProgress (1): 90/240 kBProgress (1): 106/240 kBProgress (1): 123/240 kBProgress (1): 139/240 kBProgress (1): 156/240 kBProgress (1): 172/240 kBProgress (1): 188/240 kBProgress (1): 205/240 kBProgress (1): 217/240 kBProgress (1): 233/240 kBProgress (1): 240 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.jar (240 kB at 6.1 MB/s)
+[INFO] 
+[INFO] ------------------< net.automatalib:automata-parent >-------------------
+[INFO] Building AutomataLib 0.13.0-SNAPSHOT                              [1/34]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-parent ---
+[INFO] net.automatalib:automata-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] ---------------< net.automatalib:automata-build-parent >----------------
+[INFO] Building AutomataLib :: Build Parent 0.13.0-SNAPSHOT              [2/34]
+[INFO]   from build-parent/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-build-parent ---
+[INFO] net.automatalib:automata-build-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] --------------< net.automatalib:automata-commons-parent >---------------
+[INFO] Building AutomataLib :: Commons 0.13.0-SNAPSHOT                   [3/34]
+[INFO]   from commons/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-commons-parent ---
+[INFO] net.automatalib:automata-commons-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] ---------------< net.automatalib:automata-commons-util >----------------
+[INFO] Building AutomataLib :: Commons :: Utilities 0.13.0-SNAPSHOT      [4/34]
+[INFO]   from commons/util/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-commons-util ---
+[INFO] net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-commons-settings >--------------
+[INFO] Building AutomataLib :: Commons :: Settings 0.13.0-SNAPSHOT       [5/34]
+[INFO]   from commons/settings/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-commons-settings ---
+[INFO] net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.11:provided
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] ---------< net.automatalib:automata-commons-smartcollections >----------
+[INFO] Building AutomataLib :: Commons :: Smart Collections 0.13.0-SNAPSHOT [6/34]
+[INFO]   from commons/smartcollections/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-commons-smartcollections ---
+[INFO] net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] --------------------< net.automatalib:automata-api >--------------------
+[INFO] Building AutomataLib :: API 0.13.0-SNAPSHOT                       [7/34]
+[INFO]   from api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-api ---
+[INFO] net.automatalib:automata-api:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-core >--------------------
+[INFO] Building AutomataLib :: Core 0.13.0-SNAPSHOT                      [8/34]
+[INFO]   from core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-core ---
+[INFO] net.automatalib:automata-core:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- org.mockito:mockito-core:jar:5.20.0:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.17.7:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.17.7:test
+[INFO] |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -----------< net.automatalib:automata-serialization-parent >------------
+[INFO] Building AutomataLib :: Serialization 0.13.0-SNAPSHOT             [9/34]
+[INFO]   from serialization/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-parent ---
+[INFO] net.automatalib:automata-serialization-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-dot >-------------
+[INFO] Building AutomataLib :: Serialization :: DOT 0.13.0-SNAPSHOT     [10/34]
+[INFO]   from serialization/dot/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-dot ---
+[INFO] net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-util >--------------------
+[INFO] Building AutomataLib :: Utilities 0.13.0-SNAPSHOT                [11/34]
+[INFO]   from util/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-util ---
+[INFO] net.automatalib:automata-util:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- de.learnlib.tooling:annotations:jar:0.1.1:provided
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-adapters-parent >--------------
+[INFO] Building AutomataLib :: Adapters 0.13.0-SNAPSHOT                 [12/34]
+[INFO]   from adapters/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-adapters-parent ---
+[INFO] net.automatalib:automata-adapters-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-brics >-------------------
+[INFO] Building AutomataLib :: Adapters :: BRICS 0.13.0-SNAPSHOT        [13/34]
+[INFO]   from adapters/brics/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-brics ---
+[INFO] net.automatalib:automata-brics:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- dk.brics:automaton:jar:1.12-4:provided
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] ----------------< net.automatalib:automata-incremental >----------------
+[INFO] Building AutomataLib :: Incremental 0.13.0-SNAPSHOT              [14/34]
+[INFO]   from incremental/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-incremental ---
+[INFO] net.automatalib:automata-incremental:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-etf >-------------
+[INFO] Building AutomataLib :: Serialization :: ETF 0.13.0-SNAPSHOT     [15/34]
+[INFO]   from serialization/etf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-etf ---
+[INFO] net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-fsm >-------------
+[INFO] Building AutomataLib :: Serialization :: FSM 0.13.0-SNAPSHOT     [16/34]
+[INFO]   from serialization/fsm/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-fsm ---
+[INFO] net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-taf >-------------
+[INFO] Building AutomataLib :: Serialization :: TAF 0.13.0-SNAPSHOT     [17/34]
+[INFO]   from serialization/taf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-taf ---
+[INFO] net.automatalib:automata-serialization-taf:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -----------< net.automatalib:automata-modelchecking-parent >------------
+[INFO] Building AutomataLib :: Model Checking 0.13.0-SNAPSHOT           [18/34]
+[INFO]   from modelchecking/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-modelchecking-parent ---
+[INFO] net.automatalib:automata-modelchecking-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] -----------< net.automatalib:automata-modelchecking-ltsmin >------------
+[INFO] Building AutomataLib :: Model Checking :: LTSmin 0.13.0-SNAPSHOT [19/34]
+[INFO]   from modelchecking/ltsmin/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-modelchecking-ltsmin ---
+[INFO] net.automatalib:automata-modelchecking-ltsmin:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- de.learnlib.tooling:annotations:jar:0.1.1:provided
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-serialization-taf:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-modelchecking-m3c >-------------
+[INFO] Building AutomataLib :: Model Checking :: M3C 0.13.0-SNAPSHOT    [20/34]
+[INFO]   from modelchecking/m3c/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-modelchecking-m3c ---
+[INFO] net.automatalib:automata-modelchecking-m3c:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- info.scce:addlib-core:jar:4.0.1:compile
+[INFO] |  +- info.scce:addlib-api:jar:4.0.1:compile
+[INFO] |  \- info.scce:addlib-util:jar:4.0.1:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- info.scce:addlib-cudd:jar:4.0.1:test
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-aut >-------------
+[INFO] Building AutomataLib :: Serialization :: AUT 0.13.0-SNAPSHOT     [21/34]
+[INFO]   from serialization/aut/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-aut ---
+[INFO] net.automatalib:automata-serialization-aut:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-ba >--------------
+[INFO] Building AutomataLib :: Serialization :: BA 0.13.0-SNAPSHOT      [22/34]
+[INFO]   from serialization/ba/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-ba ---
+[INFO] net.automatalib:automata-serialization-ba:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] ---------< net.automatalib:automata-serialization-learnlibv2 >----------
+[INFO] Building AutomataLib :: Serialization :: LearnLibV2 0.13.0-SNAPSHOT [23/34]
+[INFO]   from serialization/learnlibv2/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-learnlibv2 ---
+[INFO] net.automatalib:automata-serialization-learnlibv2:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] ------------< net.automatalib:automata-serialization-mata >-------------
+[INFO] Building AutomataLib :: Serialization :: Mata 0.13.0-SNAPSHOT    [24/34]
+[INFO]   from serialization/mata/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-mata ---
+[INFO] net.automatalib:automata-serialization-mata:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-saf >-------------
+[INFO] Building AutomataLib :: Serialization :: SAF 0.13.0-SNAPSHOT     [25/34]
+[INFO]   from serialization/saf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-serialization-saf ---
+[INFO] net.automatalib:automata-serialization-saf:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] -----------< net.automatalib:automata-visualization-parent >------------
+[INFO] Building AutomataLib :: Visualization 0.13.0-SNAPSHOT            [26/34]
+[INFO]   from visualization/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-visualization-parent ---
+[INFO] net.automatalib:automata-visualization-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] --------------< net.automatalib:automata-dot-visualizer >---------------
+[INFO] Building AutomataLib :: Visualization :: DOT Visualizer 0.13.0-SNAPSHOT [27/34]
+[INFO]   from visualization/dot-visualizer/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-dot-visualizer ---
+[INFO] net.automatalib:automata-dot-visualizer:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.11:provided
+[INFO] +- com.github.caciocavallosilano:cacio-tta:jar:1.18:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter-engine:jar:5.8.2:test
+[INFO] |  |  +- org.junit.platform:junit-platform-engine:jar:1.8.2:test
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.8.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.8.2:test
+[INFO] |  |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] |  +- com.github.caciocavallosilano:cacio-shared:jar:1.18:test
+[INFO] |  +- org.assertj:assertj-swing-junit:jar:3.17.1:test
+[INFO] |  |  \- junit:junit:jar:4.12:test
+[INFO] |  |     \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- com.jidesoft:jide-oss:jar:3.6.18:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  \- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] +- org.assertj:assertj-swing:jar:3.17.1:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.17.2:test
+[INFO] |  \- org.easytesting:fest-util:jar:1.2.5:test
+[INFO] +- org.assertj:assertj-swing-testng:jar:3.17.1:test
+[INFO] |  \- org.easytesting:fest-reflect:jar:1.4.1:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-jung-visualizer >--------------
+[INFO] Building AutomataLib :: Visualization :: JUNG Visualizer 0.13.0-SNAPSHOT [28/34]
+[INFO]   from visualization/jung-visualizer/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-jung-visualizer ---
+[INFO] net.automatalib:automata-jung-visualizer:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- com.github.misberner.graphviz-awt-shapes:graphviz-awt-shapes:jar:0.0.1:compile
+[INFO] +- com.google.guava:guava:jar:33.4.0-jre:compile
+[INFO] |  +- com.google.guava:failureaccess:jar:1.0.2:compile
+[INFO] |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] |  +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] |  +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
+[INFO] |  \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
+[INFO] +- net.sf.jung:jung-algorithms:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-api:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-graph-impl:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-visualization:jar:2.1.1:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.11:provided
+[INFO] +- com.github.caciocavallosilano:cacio-tta:jar:1.18:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter-engine:jar:5.8.2:test
+[INFO] |  |  +- org.junit.platform:junit-platform-engine:jar:1.8.2:test
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.8.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.8.2:test
+[INFO] |  |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] |  +- com.github.caciocavallosilano:cacio-shared:jar:1.18:test
+[INFO] |  +- org.assertj:assertj-swing-junit:jar:3.17.1:test
+[INFO] |  |  +- junit:junit:jar:4.12:test
+[INFO] |  |  |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  |  +- org.assertj:assertj-swing:jar:3.17.1:test
+[INFO] |  |  |  +- org.assertj:assertj-core:jar:3.17.2:test
+[INFO] |  |  |  \- org.easytesting:fest-util:jar:1.2.5:test
+[INFO] |  |  \- org.easytesting:fest-reflect:jar:1.4.1:test
+[INFO] |  +- com.jidesoft:jide-oss:jar:3.6.18:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  \- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] 
+[INFO] ---------< net.automatalib.distribution:automata-distribution >---------
+[INFO] Building AutomataLib :: Distribution 0.13.0-SNAPSHOT             [29/34]
+[INFO]   from distribution/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-distribution ---
+[INFO] net.automatalib.distribution:automata-distribution:pom:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-brics:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-incremental:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-modelchecking-ltsmin:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-modelchecking-m3c:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- info.scce:addlib-core:jar:4.0.1:compile
+[INFO] |     +- info.scce:addlib-api:jar:4.0.1:compile
+[INFO] |     +- info.scce:addlib-util:jar:4.0.1:compile
+[INFO] |     \- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- net.automatalib:automata-serialization-aut:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-ba:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-learnlibv2:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-mata:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-saf:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-taf:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-dot-visualizer:jar:0.13.0-SNAPSHOT:compile
+[INFO] \- net.automatalib:automata-jung-visualizer:jar:0.13.0-SNAPSHOT:compile
+[INFO]    +- com.github.misberner.graphviz-awt-shapes:graphviz-awt-shapes:jar:0.0.1:compile
+[INFO]    +- com.google.guava:guava:jar:33.4.0-jre:compile
+[INFO]    |  +- com.google.guava:failureaccess:jar:1.0.2:compile
+[INFO]    |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO]    |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO]    |  +- com.google.errorprone:error_prone_annotations:jar:2.36.0:compile
+[INFO]    |  \- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
+[INFO]    +- net.sf.jung:jung-algorithms:jar:2.1.1:compile
+[INFO]    +- net.sf.jung:jung-api:jar:2.1.1:compile
+[INFO]    +- net.sf.jung:jung-graph-impl:jar:2.1.1:compile
+[INFO]    \- net.sf.jung:jung-visualization:jar:2.1.1:compile
+[INFO] 
+[INFO] -------< net.automatalib.archetypes:automata-archetypes-parent >--------
+[INFO] Building AutomataLib :: Archetypes 0.13.0-SNAPSHOT               [30/34]
+[INFO]   from archetypes/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-archetypes-parent ---
+[INFO] net.automatalib.archetypes:automata-archetypes-parent:pom:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] ------------------< net.automatalib.archetypes:basic >------------------
+[INFO] Building AutomataLib :: Archetypes :: Basic 0.13.0-SNAPSHOT      [31/34]
+[INFO]   from archetypes/basic/pom.xml
+[INFO] --------------------------[ maven-archetype ]---------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ basic ---
+[INFO] net.automatalib.archetypes:basic:maven-archetype:0.13.0-SNAPSHOT
+[INFO] \- net.automatalib.distribution:automata-distribution:pom:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-brics:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:test
+[INFO]    |  \- org.slf4j:slf4j-api:jar:2.0.16:test
+[INFO]    +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-incremental:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-modelchecking-ltsmin:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-modelchecking-m3c:jar:0.13.0-SNAPSHOT:test
+[INFO]    |  \- info.scce:addlib-core:jar:4.0.1:test
+[INFO]    |     +- info.scce:addlib-api:jar:4.0.1:test
+[INFO]    |     +- info.scce:addlib-util:jar:4.0.1:test
+[INFO]    |     \- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO]    +- net.automatalib:automata-serialization-aut:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-ba:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-learnlibv2:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-mata:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-saf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-taf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-dot-visualizer:jar:0.13.0-SNAPSHOT:test
+[INFO]    \- net.automatalib:automata-jung-visualizer:jar:0.13.0-SNAPSHOT:test
+[INFO]       +- com.github.misberner.graphviz-awt-shapes:graphviz-awt-shapes:jar:0.0.1:test
+[INFO]       +- com.google.guava:guava:jar:33.4.0-jre:test
+[INFO]       |  +- com.google.guava:failureaccess:jar:1.0.2:test
+[INFO]       |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:test
+[INFO]       |  +- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO]       |  +- com.google.errorprone:error_prone_annotations:jar:2.36.0:test
+[INFO]       |  \- com.google.j2objc:j2objc-annotations:jar:3.0.0:test
+[INFO]       +- net.sf.jung:jung-algorithms:jar:2.1.1:test
+[INFO]       +- net.sf.jung:jung-api:jar:2.1.1:test
+[INFO]       +- net.sf.jung:jung-graph-impl:jar:2.1.1:test
+[INFO]       \- net.sf.jung:jung-visualization:jar:2.1.1:test
+[INFO] 
+[INFO] ----------------< net.automatalib.archetypes:complete >-----------------
+[INFO] Building AutomataLib :: Archetypes :: Complete 0.13.0-SNAPSHOT   [32/34]
+[INFO]   from archetypes/complete/pom.xml
+[INFO] --------------------------[ maven-archetype ]---------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ complete ---
+[INFO] net.automatalib.archetypes:complete:maven-archetype:0.13.0-SNAPSHOT
+[INFO] \- net.automatalib.distribution:automata-distribution:pom:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-brics:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:test
+[INFO]    |  \- org.slf4j:slf4j-api:jar:2.0.16:test
+[INFO]    +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-incremental:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-modelchecking-ltsmin:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-modelchecking-m3c:jar:0.13.0-SNAPSHOT:test
+[INFO]    |  \- info.scce:addlib-core:jar:4.0.1:test
+[INFO]    |     +- info.scce:addlib-api:jar:4.0.1:test
+[INFO]    |     +- info.scce:addlib-util:jar:4.0.1:test
+[INFO]    |     \- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO]    +- net.automatalib:automata-serialization-aut:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-ba:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-learnlibv2:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-mata:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-saf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-serialization-taf:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:test
+[INFO]    +- net.automatalib:automata-dot-visualizer:jar:0.13.0-SNAPSHOT:test
+[INFO]    \- net.automatalib:automata-jung-visualizer:jar:0.13.0-SNAPSHOT:test
+[INFO]       +- com.github.misberner.graphviz-awt-shapes:graphviz-awt-shapes:jar:0.0.1:test
+[INFO]       +- com.google.guava:guava:jar:33.4.0-jre:test
+[INFO]       |  +- com.google.guava:failureaccess:jar:1.0.2:test
+[INFO]       |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:test
+[INFO]       |  +- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO]       |  +- com.google.errorprone:error_prone_annotations:jar:2.36.0:test
+[INFO]       |  \- com.google.j2objc:j2objc-annotations:jar:3.0.0:test
+[INFO]       +- net.sf.jung:jung-algorithms:jar:2.1.1:test
+[INFO]       +- net.sf.jung:jung-api:jar:2.1.1:test
+[INFO]       +- net.sf.jung:jung-graph-impl:jar:2.1.1:test
+[INFO]       \- net.sf.jung:jung-visualization:jar:2.1.1:test
+[INFO] 
+[INFO] ---------------< net.automatalib:automata-build-config >----------------
+[INFO] Building AutomataLib :: Build Config 0.13.0-SNAPSHOT             [33/34]
+[INFO]   from build-config/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-build-config ---
+[INFO] net.automatalib:automata-build-config:jar:0.13.0-SNAPSHOT
+[INFO] 
+[INFO] -----------------< net.automatalib:automata-examples >------------------
+[INFO] Building AutomataLib :: Examples 0.13.0-SNAPSHOT                 [34/34]
+[INFO]   from examples/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ automata-examples ---
+[INFO] net.automatalib:automata-examples:jar:0.13.0-SNAPSHOT
+[INFO] +- net.automatalib:automata-api:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-commons-settings:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-commons-smartcollections:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-brics:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-dot-visualizer:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-incremental:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-modelchecking-ltsmin:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  +- net.automatalib:automata-serialization-etf:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- net.automatalib:automata-serialization-fsm:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-modelchecking-m3c:jar:0.13.0-SNAPSHOT:compile
+[INFO] |  \- info.scce:addlib-core:jar:4.0.1:compile
+[INFO] |     \- info.scce:addlib-util:jar:4.0.1:compile
+[INFO] +- net.automatalib:automata-serialization-dot:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.13.0-SNAPSHOT:compile
+[INFO] +- ch.qos.logback:logback-classic:jar:1.5.25:runtime
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.5.25:runtime
+[INFO] +- dk.brics:automaton:jar:1.12-4:compile
+[INFO] +- info.scce:addlib-cudd:jar:4.0.1:runtime
+[INFO] |  \- info.scce:addlib-api:jar:4.0.1:compile
+[INFO] +- org.slf4j:slf4j-api:jar:2.0.16:compile
+[INFO] +- org.checkerframework:checker-qual:jar:3.48.3:provided
+[INFO] +- com.github.caciocavallosilano:cacio-tta:jar:1.18:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter-engine:jar:5.8.2:test
+[INFO] |  |  +- org.junit.platform:junit-platform-engine:jar:1.8.2:test
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.8.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.8.2:test
+[INFO] |  |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] |  +- com.github.caciocavallosilano:cacio-shared:jar:1.18:test
+[INFO] |  +- org.assertj:assertj-swing-junit:jar:3.17.1:test
+[INFO] |  |  +- junit:junit:jar:4.12:test
+[INFO] |  |  |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  |  +- org.assertj:assertj-swing:jar:3.17.1:test
+[INFO] |  |  |  +- org.assertj:assertj-core:jar:3.17.2:test
+[INFO] |  |  |  \- org.easytesting:fest-util:jar:1.2.5:test
+[INFO] |  |  \- org.easytesting:fest-reflect:jar:1.4.1:test
+[INFO] |  +- com.jidesoft:jide-oss:jar:3.6.18:test
+[INFO] |  +- net.bytebuddy:byte-buddy:jar:1.14.11:test
+[INFO] |  \- net.bytebuddy:byte-buddy-agent:jar:1.14.11:test
+[INFO] \- org.testng:testng:jar:7.10.2:test
+[INFO]    +- com.beust:jcommander:jar:1.82:test
+[INFO]    \- org.webjars:jquery:jar:3.7.1:test
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for AutomataLib 0.13.0-SNAPSHOT:
+[INFO] 
+[INFO] AutomataLib ........................................ SUCCESS [  0.959 s]
+[INFO] AutomataLib :: Build Parent ........................ SUCCESS [  0.024 s]
+[INFO] AutomataLib :: Commons ............................. SUCCESS [  0.007 s]
+[INFO] AutomataLib :: Commons :: Utilities ................ SUCCESS [  0.051 s]
+[INFO] AutomataLib :: Commons :: Settings ................. SUCCESS [  0.023 s]
+[INFO] AutomataLib :: Commons :: Smart Collections ........ SUCCESS [  0.012 s]
+[INFO] AutomataLib :: API ................................. SUCCESS [  0.016 s]
+[INFO] AutomataLib :: Core ................................ SUCCESS [  0.058 s]
+[INFO] AutomataLib :: Serialization ....................... SUCCESS [  0.008 s]
+[INFO] AutomataLib :: Serialization :: DOT ................ SUCCESS [  0.019 s]
+[INFO] AutomataLib :: Utilities ........................... SUCCESS [  0.025 s]
+[INFO] AutomataLib :: Adapters ............................ SUCCESS [  0.007 s]
+[INFO] AutomataLib :: Adapters :: BRICS ................... SUCCESS [  0.019 s]
+[INFO] AutomataLib :: Incremental ......................... SUCCESS [  0.015 s]
+[INFO] AutomataLib :: Serialization :: ETF ................ SUCCESS [  0.016 s]
+[INFO] AutomataLib :: Serialization :: FSM ................ SUCCESS [  0.016 s]
+[INFO] AutomataLib :: Serialization :: TAF ................ SUCCESS [  0.017 s]
+[INFO] AutomataLib :: Model Checking ...................... SUCCESS [  0.006 s]
+[INFO] AutomataLib :: Model Checking :: LTSmin ............ SUCCESS [  0.036 s]
+[INFO] AutomataLib :: Model Checking :: M3C ............... SUCCESS [  0.031 s]
+[INFO] AutomataLib :: Serialization :: AUT ................ SUCCESS [  0.014 s]
+[INFO] AutomataLib :: Serialization :: BA ................. SUCCESS [  0.011 s]
+[INFO] AutomataLib :: Serialization :: LearnLibV2 ......... SUCCESS [  0.010 s]
+[INFO] AutomataLib :: Serialization :: Mata ............... SUCCESS [  0.019 s]
+[INFO] AutomataLib :: Serialization :: SAF ................ SUCCESS [  0.015 s]
+[INFO] AutomataLib :: Visualization ....................... SUCCESS [  0.009 s]
+[INFO] AutomataLib :: Visualization :: DOT Visualizer ..... SUCCESS [  0.108 s]
+[INFO] AutomataLib :: Visualization :: JUNG Visualizer .... SUCCESS [  0.054 s]
+[INFO] AutomataLib :: Distribution ........................ SUCCESS [  0.047 s]
+[INFO] AutomataLib :: Archetypes .......................... SUCCESS [  0.279 s]
+[INFO] AutomataLib :: Archetypes :: Basic ................. SUCCESS [  0.031 s]
+[INFO] AutomataLib :: Archetypes :: Complete .............. SUCCESS [  0.028 s]
+[INFO] AutomataLib :: Build Config ........................ SUCCESS [  0.007 s]
+[INFO] AutomataLib :: Examples ............................ SUCCESS [  0.050 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.305 s
+[INFO] Finished at: 2026-06-09T16:09:12+02:00
+[INFO] ------------------------------------------------------------------------

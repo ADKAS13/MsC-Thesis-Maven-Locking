@@ -1,0 +1,630 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-api:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 802, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-build-tools:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 739, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-core:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 809, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-util:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 872, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 788, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 796, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 777, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-commons-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 660, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-incremental:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 825, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-misc-algorithms:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 827, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-misc-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 658, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-brics:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 806, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-adapters-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 658, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-examples:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 832, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-jung-visualizer:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 823, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-visualization-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 656, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-serialization-core:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 787, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-serialization-saf:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 793, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-serialization-taf:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 824, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-serialization-learnlibv2:jar:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 811, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-serialization-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 659, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib.archetypes:core:maven-archetype:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 770, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib.archetypes:typical:maven-archetype:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 788, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib.archetypes:complete:maven-archetype:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 806, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib.archetypes:automata-archetypes-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 680, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib.distribution:automata-distribution:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 655, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.automatalib:automata-parent:pom:0.6.1-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 749, column 24
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] AutomataLib                                                        [pom]
+[INFO] AutomataLib :: Commons                                             [pom]
+[INFO] AutomataLib :: Commons :: Utilities                                [jar]
+[INFO] AutomataLib :: API                                                 [jar]
+[INFO] AutomataLib :: Build Tools                                         [jar]
+[INFO] AutomataLib :: Core                                                [jar]
+[INFO] AutomataLib :: Commons :: DOT Utilities                            [jar]
+[INFO] AutomataLib :: Commons :: Smart Collections                        [jar]
+[INFO] AutomataLib :: Utilities                                           [jar]
+[INFO] AutomataLib :: Misc                                                [pom]
+[INFO] AutomataLib :: Misc :: Incremental                                 [jar]
+[INFO] AutomataLib :: Misc :: Misc. Algorithms                            [jar]
+[INFO] AutomataLib :: Adapters                                            [pom]
+[INFO] AutomataLib :: Adapters :: BRICS                                   [jar]
+[INFO] AutomataLib :: Examples                                            [jar]
+[INFO] AutomataLib :: Visualization                                       [pom]
+[INFO] AutomataLib :: Visualization :: JUNG Visualizer                    [jar]
+[INFO] AutomataLib :: Serialization                                       [pom]
+[INFO] AutomataLib :: Serialization :: Core                               [jar]
+[INFO] AutomataLib :: Serialization :: SAF                                [jar]
+[INFO] AutomataLib :: Serialization :: TAF                                [jar]
+[INFO] AutomataLib :: Serialization :: LearnLibV2                         [jar]
+[INFO] AutomataLib :: Archetypes                                          [pom]
+[INFO] AutomataLib :: Archetypes :: Core                      [maven-archetype]
+[INFO] AutomataLib :: Archetypes :: Typical                   [maven-archetype]
+[INFO] AutomataLib :: Archetypes :: Complete                  [maven-archetype]
+[INFO] AutomataLib :: Distribution                                        [pom]
+[INFO] 
+[INFO] ------------------< net.automatalib:automata-parent >-------------------
+[INFO] Building AutomataLib 0.6.1-SNAPSHOT                               [1/27]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-parent ---
+[INFO] net.automatalib:automata-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-commons-parent >---------------
+[INFO] Building AutomataLib :: Commons 0.6.1-SNAPSHOT                    [2/27]
+[INFO]   from commons/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-commons-parent ---
+[INFO] net.automatalib:automata-commons-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ---------------< net.automatalib:automata-commons-util >----------------
+[INFO] Building AutomataLib :: Commons :: Utilities 0.6.1-SNAPSHOT       [3/27]
+[INFO]   from commons/util/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-commons-util ---
+[INFO] net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] --------------------< net.automatalib:automata-api >--------------------
+[INFO] Building AutomataLib :: API 0.6.1-SNAPSHOT                        [4/27]
+[INFO]   from api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-api ---
+[INFO] net.automatalib:automata-api:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.7:provided
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] ----------------< net.automatalib:automata-build-tools >----------------
+[INFO] Building AutomataLib :: Build Tools 0.6.1-SNAPSHOT                [5/27]
+[INFO]   from build-tools/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-build-tools ---
+[INFO] net.automatalib:automata-build-tools:jar:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-core >--------------------
+[INFO] Building AutomataLib :: Core 0.6.1-SNAPSHOT                       [6/27]
+[INFO]   from core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-core ---
+[INFO] net.automatalib:automata-core:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.7:provided
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-commons-dotutil >--------------
+[INFO] Building AutomataLib :: Commons :: DOT Utilities 0.6.1-SNAPSHOT   [7/27]
+[INFO]   from commons/dotutil/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-commons-dotutil ---
+[INFO] net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ---------< net.automatalib:automata-commons-smartcollections >----------
+[INFO] Building AutomataLib :: Commons :: Smart Collections 0.6.1-SNAPSHOT [8/27]
+[INFO]   from commons/smartcollections/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-commons-smartcollections ---
+[INFO] net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-util >--------------------
+[INFO] Building AutomataLib :: Utilities 0.6.1-SNAPSHOT                  [9/27]
+[INFO]   from util/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-util ---
+[INFO] net.automatalib:automata-util:jar:0.6.1-SNAPSHOT
+[INFO] +- antlr:antlr:jar:2.7.7:provided
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.github.misberner.ap-commons:ap-commons:jar:0.0.2:provided
+[INFO] +- com.github.misberner.duzzt:duzzt-annotations:jar:0.0.2:provided
+[INFO] +- com.github.misberner.duzzt:duzzt-processor:jar:0.0.2:provided
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- dk.brics.automaton:automaton:jar:1.11-8:provided
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.antlr:ST4:jar:4.0.7:provided
+[INFO] +- org.antlr:antlr-runtime:jar:3.5:provided
+[INFO] +- org.antlr:stringtemplate:jar:3.2.1:provided
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.7:provided
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] ----------------< net.automatalib:automata-misc-parent >----------------
+[INFO] Building AutomataLib :: Misc 0.6.1-SNAPSHOT                      [10/27]
+[INFO]   from misc/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-misc-parent ---
+[INFO] net.automatalib:automata-misc-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ----------------< net.automatalib:automata-incremental >----------------
+[INFO] Building AutomataLib :: Misc :: Incremental 0.6.1-SNAPSHOT       [11/27]
+[INFO]   from misc/incremental/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-incremental ---
+[INFO] net.automatalib:automata-incremental:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-misc-algorithms >--------------
+[INFO] Building AutomataLib :: Misc :: Misc. Algorithms 0.6.1-SNAPSHOT  [12/27]
+[INFO]   from misc/misc-algorithms/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-misc-algorithms ---
+[INFO] net.automatalib:automata-misc-algorithms:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.7.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-adapters-parent >--------------
+[INFO] Building AutomataLib :: Adapters 0.6.1-SNAPSHOT                  [13/27]
+[INFO]   from adapters/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-adapters-parent ---
+[INFO] net.automatalib:automata-adapters-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -------------------< net.automatalib:automata-brics >-------------------
+[INFO] Building AutomataLib :: Adapters :: BRICS 0.6.1-SNAPSHOT         [14/27]
+[INFO]   from adapters/brics/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-brics ---
+[INFO] net.automatalib:automata-brics:jar:0.6.1-SNAPSHOT
+[INFO] +- com.beust:jcommander:jar:1.64:test
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- dk.brics.automaton:automaton:jar:1.11-8:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] +- org.testng:testng:jar:6.11:test
+[INFO] \- org.yaml:snakeyaml:jar:1.17:test
+[INFO] 
+[INFO] -----------------< net.automatalib:automata-examples >------------------
+[INFO] Building AutomataLib :: Examples 0.6.1-SNAPSHOT                  [15/27]
+[INFO]   from examples/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-examples ---
+[INFO] net.automatalib:automata-examples:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- dk.brics.automaton:automaton:jar:1.11-8:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-brics:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-incremental:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -----------< net.automatalib:automata-visualization-parent >------------
+[INFO] Building AutomataLib :: Visualization 0.6.1-SNAPSHOT             [16/27]
+[INFO]   from visualization/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-visualization-parent ---
+[INFO] net.automatalib:automata-visualization-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] --------------< net.automatalib:automata-jung-visualizer >--------------
+[INFO] Building AutomataLib :: Visualization :: JUNG Visualizer 0.6.1-SNAPSHOT [17/27]
+[INFO]   from visualization/jung-visualizer/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-jung-visualizer ---
+[INFO] net.automatalib:automata-jung-visualizer:jar:0.6.1-SNAPSHOT
+[INFO] +- com.github.misberner.graphviz-awt-shapes:graphviz-awt-shapes:jar:0.0.1:compile
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.sf.jung:jung-algorithms:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-api:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-graph-impl:jar:2.1.1:compile
+[INFO] +- net.sf.jung:jung-visualization:jar:2.1.1:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.kohsuke.metainf-services:metainf-services:jar:1.7:provided
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -----------< net.automatalib:automata-serialization-parent >------------
+[INFO] Building AutomataLib :: Serialization 0.6.1-SNAPSHOT             [18/27]
+[INFO]   from serialization/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-serialization-parent ---
+[INFO] net.automatalib:automata-serialization-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ------------< net.automatalib:automata-serialization-core >-------------
+[INFO] Building AutomataLib :: Serialization :: Core 0.6.1-SNAPSHOT     [19/27]
+[INFO]   from serialization/core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-serialization-core ---
+[INFO] net.automatalib:automata-serialization-core:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-saf >-------------
+[INFO] Building AutomataLib :: Serialization :: SAF 0.6.1-SNAPSHOT      [20/27]
+[INFO]   from serialization/saf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-serialization-saf ---
+[INFO] net.automatalib:automata-serialization-saf:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -------------< net.automatalib:automata-serialization-taf >-------------
+[INFO] Building AutomataLib :: Serialization :: TAF 0.6.1-SNAPSHOT      [21/27]
+[INFO]   from serialization/taf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-serialization-taf ---
+[INFO] net.automatalib:automata-serialization-taf:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ---------< net.automatalib:automata-serialization-learnlibv2 >----------
+[INFO] Building AutomataLib :: Serialization :: LearnLibV2 0.6.1-SNAPSHOT [22/27]
+[INFO]   from serialization/learnlibv2/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-serialization-learnlibv2 ---
+[INFO] net.automatalib:automata-serialization-learnlibv2:jar:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:compile
+[INFO] +- com.google.guava:guava:jar:22.0:compile
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-serialization-core:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:compile
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -------< net.automatalib.archetypes:automata-archetypes-parent >--------
+[INFO] Building AutomataLib :: Archetypes 0.6.1-SNAPSHOT                [23/27]
+[INFO]   from archetypes/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-archetypes-parent ---
+[INFO] net.automatalib.archetypes:automata-archetypes-parent:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ------------------< net.automatalib.archetypes:core >-------------------
+[INFO] Building AutomataLib :: Archetypes :: Core 0.6.1-SNAPSHOT        [24/27]
+[INFO]   from archetypes/core/pom.xml
+[INFO] --------------------------[ maven-archetype ]---------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ core ---
+[INFO] net.automatalib.archetypes:core:maven-archetype:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:test
+[INFO] +- com.google.guava:guava:jar:22.0:test
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:test
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:test
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] -----------------< net.automatalib.archetypes:typical >-----------------
+[INFO] Building AutomataLib :: Archetypes :: Typical 0.6.1-SNAPSHOT     [25/27]
+[INFO]   from archetypes/typical/pom.xml
+[INFO] --------------------------[ maven-archetype ]---------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ typical ---
+[INFO] net.automatalib.archetypes:typical:maven-archetype:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:test
+[INFO] +- com.google.guava:guava:jar:22.0:test
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:test
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:test
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ----------------< net.automatalib.archetypes:complete >-----------------
+[INFO] Building AutomataLib :: Archetypes :: Complete 0.6.1-SNAPSHOT    [26/27]
+[INFO]   from archetypes/complete/pom.xml
+[INFO] --------------------------[ maven-archetype ]---------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ complete ---
+[INFO] net.automatalib.archetypes:complete:maven-archetype:0.6.1-SNAPSHOT
+[INFO] +- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO] +- com.google.errorprone:error_prone_annotations:jar:2.0.18:test
+[INFO] +- com.google.guava:guava:jar:22.0:test
+[INFO] +- com.google.j2objc:j2objc-annotations:jar:1.1:test
+[INFO] +- dk.brics.automaton:automaton:jar:1.11-8:test
+[INFO] +- net.automatalib:automata-api:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-brics:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-dotutil:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-smartcollections:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-commons-util:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-core:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-incremental:jar:0.6.1-SNAPSHOT:test
+[INFO] +- net.automatalib:automata-util:jar:0.6.1-SNAPSHOT:test
+[INFO] +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] 
+[INFO] ---------< net.automatalib.distribution:automata-distribution >---------
+[INFO] Building AutomataLib :: Distribution 0.6.1-SNAPSHOT              [27/27]
+[INFO]   from distribution/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-distribution ---
+[INFO] net.automatalib.distribution:automata-distribution:pom:0.6.1-SNAPSHOT
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.25:test
+[INFO] \- org.slf4j:slf4j-nop:jar:1.7.25:test
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for AutomataLib 0.6.1-SNAPSHOT:
+[INFO] 
+[INFO] AutomataLib ........................................ SUCCESS [  1.329 s]
+[INFO] AutomataLib :: Commons ............................. SUCCESS [  0.020 s]
+[INFO] AutomataLib :: Commons :: Utilities ................ SUCCESS [  0.071 s]
+[INFO] AutomataLib :: API ................................. SUCCESS [  0.064 s]
+[INFO] AutomataLib :: Build Tools ......................... SUCCESS [  0.022 s]
+[INFO] AutomataLib :: Core ................................ SUCCESS [  0.043 s]
+[INFO] AutomataLib :: Commons :: DOT Utilities ............ SUCCESS [  0.025 s]
+[INFO] AutomataLib :: Commons :: Smart Collections ........ SUCCESS [  0.028 s]
+[INFO] AutomataLib :: Utilities ........................... SUCCESS [  0.060 s]
+[INFO] AutomataLib :: Misc ................................ SUCCESS [  0.017 s]
+[INFO] AutomataLib :: Misc :: Incremental ................. SUCCESS [  0.037 s]
+[INFO] AutomataLib :: Misc :: Misc. Algorithms ............ SUCCESS [  0.034 s]
+[INFO] AutomataLib :: Adapters ............................ SUCCESS [  0.015 s]
+[INFO] AutomataLib :: Adapters :: BRICS ................... SUCCESS [  0.027 s]
+[INFO] AutomataLib :: Examples ............................ SUCCESS [  0.035 s]
+[INFO] AutomataLib :: Visualization ....................... SUCCESS [  0.016 s]
+[INFO] AutomataLib :: Visualization :: JUNG Visualizer .... SUCCESS [  0.037 s]
+[INFO] AutomataLib :: Serialization ....................... SUCCESS [  0.013 s]
+[INFO] AutomataLib :: Serialization :: Core ............... SUCCESS [  0.023 s]
+[INFO] AutomataLib :: Serialization :: SAF ................ SUCCESS [  0.023 s]
+[INFO] AutomataLib :: Serialization :: TAF ................ SUCCESS [  0.027 s]
+[INFO] AutomataLib :: Serialization :: LearnLibV2 ......... SUCCESS [  0.027 s]
+[INFO] AutomataLib :: Archetypes .......................... SUCCESS [  0.281 s]
+[INFO] AutomataLib :: Archetypes :: Core .................. SUCCESS [  0.067 s]
+[INFO] AutomataLib :: Archetypes :: Typical ............... SUCCESS [  0.028 s]
+[INFO] AutomataLib :: Archetypes :: Complete .............. SUCCESS [  0.028 s]
+[INFO] AutomataLib :: Distribution ........................ SUCCESS [  0.014 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.822 s
+[INFO] Finished at: 2026-06-16T05:00:37+02:00
+[INFO] ------------------------------------------------------------------------
