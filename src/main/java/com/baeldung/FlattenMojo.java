@@ -2,6 +2,7 @@ package com.baeldung;
 
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.model.Dependency;
+import org.apache.maven.model.Exclusion;
 import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
 import org.apache.maven.model.io.xpp3.MavenXpp3Writer;
@@ -15,18 +16,18 @@ import org.apache.maven.project.ProjectBuildingRequest;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.shared.dependency.graph.DependencyGraphBuilder;
 import org.apache.maven.shared.dependency.graph.DependencyNode;
-import java.io.OutputStreamWriter;
-import java.io.FileOutputStream;
-import java.nio.charset.StandardCharsets;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.LinkedHashMap;
-import java.util.Comparator;
 
 @Mojo(name = "flatten")
 public class FlattenMojo extends AbstractMojo {
@@ -42,17 +43,49 @@ public class FlattenMojo extends AbstractMojo {
 
     public void execute() throws MojoExecutionException {
         try {
-            File baseDir = project.getBasedir();
+            File baseDir     = project.getBasedir();
             File pomDepsFile = new File(baseDir, "pom.deps.xml");
 
-            // 1. Build the project reference we'll hand to the graph builder.
-            //    If pom.deps.xml exists we clone the live project, swap in the
-            //    range-based dependency list, and clear any already-resolved
-            //    artifact caches so the graph builder performs a fresh resolution
-            //    rather than picking up a stale pre-resolved set from an earlier
-            //    lifecycle phase.  We deliberately never mutate the original
-            //    `project` object, which avoids polluting other mojos that run
-            //    after us in the same build.
+            // Skip parent/aggregator modules entirely
+            if ("pom".equalsIgnoreCase(project.getPackaging())) {
+                getLog().info("[LOCK-PLUGIN] Skipping aggregator/parent module: " + project.getArtifactId());
+                return;
+            }
+
+            // Map declared exclusions from the current project model
+            Map<String, List<Exclusion>> declaredExclusions = new LinkedHashMap<>();
+            if (project.getDependencies() != null) {
+                for (Object obj : project.getDependencies()) {
+                    if (obj instanceof Dependency) {
+                        Dependency d = (Dependency) obj;
+                        if (d.getExclusions() != null && !d.getExclusions().isEmpty()) {
+                            String ga = d.getGroupId() + ":" + d.getArtifactId();
+                            declaredExclusions.put(ga, d.getExclusions());
+                        }
+                    }
+                }
+            }
+
+            // ------------------------------------------------------------------
+            // 1. Resolve baseline original dependency graph
+            // ------------------------------------------------------------------
+            ProjectBuildingRequest baselineRequest =
+                new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
+            baselineRequest.setProject(project);
+            baselineRequest.setRemoteRepositories(project.getRemoteArtifactRepositories());
+
+            DependencyNode baselineRoot = dependencyGraphBuilder.buildDependencyGraph(baselineRequest, null);
+            Map<String, DepEntry> baselineResolved = new LinkedHashMap<>();
+            collectRecursive(baselineRoot, baselineResolved, 0, declaredExclusions);
+
+            List<Dependency> beforeDeps = new ArrayList<>();
+            for (DepEntry entry : baselineResolved.values()) {
+                beforeDeps.add(entry.dependency);
+            }
+
+            // ------------------------------------------------------------------
+            // 2. Clone project and (optionally) resolve ranges
+            // ------------------------------------------------------------------
             MavenProject resolutionProject = (MavenProject) project.clone();
 
             if (pomDepsFile.exists()) {
@@ -63,35 +96,55 @@ public class FlattenMojo extends AbstractMojo {
                     resolutionProject.setDependencies(depsModel.getDependencies());
                 }
             } else {
-                getLog().warn("No pom.deps.xml found — falling back to default project dependency resolution.");
+                getLog().warn("No pom.deps.xml found — using default project dependency resolution.");
             }
 
-            // Discard any artifact sets that were resolved against the *original*
-            // pom.xml so the graph builder is forced to re-resolve from scratch
-            // using whatever dependency list we just set above.
             resolutionProject.setArtifacts(null);
             resolutionProject.setDependencyArtifacts(null);
 
-            // 2. Prepare the request context against the cloned project.
+            // ------------------------------------------------------------------
+            // 3. Resolve target dependency graph
+            // ------------------------------------------------------------------
             ProjectBuildingRequest buildingRequest =
                 new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
             buildingRequest.setProject(resolutionProject);
             buildingRequest.setRemoteRepositories(project.getRemoteArtifactRepositories());
 
-            // 3. Build dependency graph.
-            DependencyNode rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
+            DependencyNode rootNode;
+            try {
+                rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
+            } catch (Exception e) {
+                getLog().warn("[LOCK-PLUGIN] Range resolution failed for " + project.getArtifactId()
+                        + " — falling back to pinned lower bounds: " + e.getMessage());
 
-            // Keyed by groupId:artifactId:type[:classifier]; includes depth so
-            // that shallower (more direct) nodes always win on scope.
+                if (pomDepsFile.exists()) {
+                    MavenXpp3Reader fallbackReader = new MavenXpp3Reader();
+                    try (FileReader fr = new FileReader(pomDepsFile)) {
+                        Model depsModel = fallbackReader.read(fr);
+                        for (Dependency dep : depsModel.getDependencies()) {
+                            dep.setVersion(extractLowerBound(dep.getVersion()));
+                        }
+                        resolutionProject.setDependencies(depsModel.getDependencies());
+                    }
+                    resolutionProject.setArtifacts(null);
+                    resolutionProject.setDependencyArtifacts(null);
+                    rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
+                } else {
+                    throw new MojoExecutionException("Resolution failed and no pom.deps.xml to fall back to", e);
+                }
+            }
+
             Map<String, DepEntry> allResolved = new LinkedHashMap<>();
-            collectRecursive(rootNode, allResolved, 0);
+            collectRecursive(rootNode, allResolved, 0, declaredExclusions);
 
             List<Dependency> flattenedDeps = new ArrayList<>();
             for (DepEntry entry : allResolved.values()) {
                 flattenedDeps.add(entry.dependency);
             }
 
-            // 4. Read the existing POM to preserve all other metadata.
+            // ------------------------------------------------------------------
+            // 4. Read existing POM
+            // ------------------------------------------------------------------
             File pomFile = project.getFile();
             Model targetModel;
             MavenXpp3Reader pomReader = new MavenXpp3Reader();
@@ -101,21 +154,24 @@ public class FlattenMojo extends AbstractMojo {
                 throw new MojoExecutionException("Failed to read existing POM file: " + e.getMessage(), e);
             }
 
-            if ("pom".equalsIgnoreCase(project.getPackaging())) {
-                // Aggregator / parent POM — leave it untouched.
-                getLog().info("Detected aggregator/parent POM — preserving project layout definitions.");
-            } else {
-                getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId());
+            // ------------------------------------------------------------------
+            // 5. Write flattened deps + comparison report
+            // ------------------------------------------------------------------
+            getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId());
 
-                flattenedDeps.sort(Comparator.comparing(Dependency::getGroupId)
-                                             .thenComparing(Dependency::getArtifactId));
+            flattenedDeps.sort(Comparator.comparing(Dependency::getGroupId)
+                                         .thenComparing(Dependency::getArtifactId));
 
-                targetModel.setDependencies(flattenedDeps);
-                targetModel.setDependencyManagement(null);
-            }
+            writeFlattenedSnapshot(flattenedDeps);
+            writeComparisonReport(beforeDeps, flattenedDeps);
 
-            // 5. Write the updated model back to pom.xml.
-            try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(pomFile), StandardCharsets.UTF_8)) {
+            targetModel.setDependencies(flattenedDeps);
+
+            // ------------------------------------------------------------------
+            // 6. Write updated pom.xml
+            // ------------------------------------------------------------------
+            try (OutputStreamWriter writer = new OutputStreamWriter(
+                    new FileOutputStream(pomFile), StandardCharsets.UTF_8)) {
                 new MavenXpp3Writer().write(writer, targetModel);
                 getLog().info("POM updated successfully: " + project.getArtifactId());
             } catch (Exception e) {
@@ -129,46 +185,158 @@ public class FlattenMojo extends AbstractMojo {
         }
     }
 
+    private String extractLowerBound(String version) {
+        if (version == null) return version;
+        if (version.startsWith("[") || version.startsWith("(")) {
+            String inner = version.replaceAll("[\\[\\]\\(\\)]", "").trim();
+            String[] parts = inner.split(",");
+            String lower = parts[0].trim();
+            return lower.isEmpty() ? version : lower;
+        }
+        return version;
+    }
+
+    // -------------------------------------------------------------------------
+    // Snapshot + comparison reporting
+    // -------------------------------------------------------------------------
+
+    private void writeFlattenedSnapshot(List<Dependency> flattenedDeps) {
+        try {
+            File buildDir   = new File(project.getBuild().getDirectory());
+            File outputFile = new File(buildDir, "dependency-tree-after.txt");
+            if (!buildDir.exists()) buildDir.mkdirs();
+
+            getLog().info("[LOCK-PLUGIN] Writing post-flatten snapshot to: " + outputFile.getAbsolutePath());
+
+            try (Writer writer = new OutputStreamWriter(
+                    new FileOutputStream(outputFile), StandardCharsets.UTF_8)) {
+
+                writer.write(project.getGroupId() + ":" + project.getArtifactId() + ":"
+                        + project.getPackaging() + ":" + project.getVersion()
+                        + System.lineSeparator());
+
+                for (Dependency dep : flattenedDeps) {
+                    writer.write("  +- "
+                            + dep.getGroupId() + ":"
+                            + dep.getArtifactId() + ":"
+                            + (dep.getType() != null ? dep.getType() : "jar") + ":"
+                            + dep.getVersion() + ":"
+                            + dep.getScope()
+                            + System.lineSeparator());
+                }
+            }
+        } catch (Exception e) {
+            getLog().warn("[LOCK-PLUGIN] Failed to write post-flatten snapshot: " + e.getMessage());
+        }
+    }
+
+    private void writeComparisonReport(List<Dependency> beforeDeps, List<Dependency> afterDeps) {
+        try {
+            File buildDir   = new File(project.getBuild().getDirectory());
+            File reportFile = new File(buildDir, "dependency-comparison-report.txt");
+
+            Map<String, String[]> beforeMap = new LinkedHashMap<>();
+            for (Dependency dep : beforeDeps) {
+                String ga      = dep.getGroupId() + ":" + dep.getArtifactId();
+                String version = dep.getVersion();
+                String scope   = dep.getScope() != null ? dep.getScope() : "compile";
+                beforeMap.put(ga, new String[]{version, scope});
+            }
+
+            Map<String, String[]> afterMap = new LinkedHashMap<>();
+            for (Dependency dep : afterDeps) {
+                String ga      = dep.getGroupId() + ":" + dep.getArtifactId();
+                String version = dep.getVersion();
+                String scope   = dep.getScope() != null ? dep.getScope() : "compile";
+                afterMap.put(ga, new String[]{version, scope});
+            }
+
+            int pinned = 0, upgraded = 0, downgraded = 0, added = 0, removed = 0, scopeChanged = 0;
+            List<String> lines = new ArrayList<>();
+
+            for (Map.Entry<String, String[]> entry : beforeMap.entrySet()) {
+                String ga = entry.getKey();
+                String[] before = entry.getValue();
+                if (!afterMap.containsKey(ga)) {
+                    removed++;
+                    lines.add("REMOVED      " + ga + "  " + before[0] + " (" + before[1] + ")");
+                } else {
+                    String[] after = afterMap.get(ga);
+                    int vCmp = compareVersions(after[0], before[0]);
+                    boolean scopeDiff = !before[1].equals(after[1]);
+                    if (vCmp == 0 && !scopeDiff) {
+                        pinned++;
+                    } else if (vCmp == 0 && scopeDiff) {
+                        scopeChanged++;
+                        lines.add("SCOPE_CHANGE " + ga + "  " + before[0]
+                                + "  [" + before[1] + " -> " + after[1] + "]");
+                    } else if (vCmp > 0) {
+                        upgraded++;
+                        lines.add("UPGRADED     " + ga + "  " + before[0] + " -> " + after[0]
+                                + (scopeDiff ? "  [" + before[1] + " -> " + after[1] + "]" : ""));
+                    } else {
+                        downgraded++;
+                        lines.add("DOWNGRADED   " + ga + "  " + before[0] + " -> " + after[0]
+                                + (scopeDiff ? "  [" + before[1] + " -> " + after[1] + "]" : ""));
+                    }
+                }
+            }
+
+            for (String ga : afterMap.keySet()) {
+                if (!beforeMap.containsKey(ga)) {
+                    String[] after = afterMap.get(ga);
+                    added++;
+                    lines.add("ADDED        " + ga + "  " + after[0] + " (" + after[1] + ")");
+                }
+            }
+
+            try (Writer writer = new OutputStreamWriter(
+                    new FileOutputStream(reportFile), StandardCharsets.UTF_8)) {
+
+                writer.write("MODULE=" + project.getArtifactId() + System.lineSeparator());
+                writer.write("PINNED=" + pinned + System.lineSeparator());
+                writer.write("UPGRADED=" + upgraded + System.lineSeparator());
+                writer.write("DOWNGRADED=" + downgraded + System.lineSeparator());
+                writer.write("ADDED=" + added + System.lineSeparator());
+                writer.write("REMOVED=" + removed + System.lineSeparator());
+                writer.write("SCOPE_CHANGED=" + scopeChanged + System.lineSeparator());
+                writer.write("---" + System.lineSeparator());
+                for (String l : lines) {
+                    writer.write(l + System.lineSeparator());
+                }
+            }
+
+            getLog().info("[LOCK-PLUGIN] Dependency comparison for " + project.getArtifactId() + ":"
+                    + " pinned=" + pinned
+                    + " upgraded=" + upgraded
+                    + " downgraded=" + downgraded
+                    + " added=" + added
+                    + " removed=" + removed
+                    + " scope_changed=" + scopeChanged);
+
+        } catch (Exception e) {
+            getLog().warn("[LOCK-PLUGIN] Failed to write comparison report: " + e.getMessage());
+        }
+    }
+
     // -------------------------------------------------------------------------
     // Graph traversal
     // -------------------------------------------------------------------------
 
-    /** Carrier that pairs a resolved Dependency with the graph depth it was
-     *  first seen at, so shallower occurrences always win on scope. */
     private static class DepEntry {
         Dependency dependency;
         int depth;
-
         DepEntry(Dependency dependency, int depth) {
             this.dependency = dependency;
             this.depth = depth;
         }
     }
 
-    /**
-     * Builds a stable dedup map from the dependency graph via preorder DFS.
-     *
-     * Dedup key: groupId:artifactId:type[:classifier]
-     *   — type is included so e.g. a jar and a test-jar of the same GA are
-     *     treated as distinct dependencies, not merged.
-     *   — classifier is included for the same reason.
-     *   — scope is intentionally excluded from the key; see merge logic below.
-     *
-     * Merge strategy when the same key appears more than once (as is common
-     * for transitive deps pulled in from multiple paths):
-     *   • Version: keep whichever is higher (matches Maven's nearest-wins after
-     *     we've already resolved ranges, so in practice they should be equal,
-     *     but we keep the higher one defensively).
-     *   • Scope: keep the occurrence that is closest to the root (lowest depth),
-     *     because that's the declaration that Maven itself would honour.  This
-     *     prevents a transitive test-scope pull from overriding a direct
-     *     compile-scope declaration just because DFS happened to visit the
-     *     test subtree first.
-     */
     private void collectRecursive(DependencyNode node,
                                   Map<String, DepEntry> seen,
-                                  int depth) {
-        if (node.getParent() != null) {   // skip the synthetic root node
+                                  int depth,
+                                  Map<String, List<Exclusion>> declaredExclusions) {
+        if (node.getParent() != null) {
             org.apache.maven.artifact.Artifact artifact = node.getArtifact();
 
             if (artifact.getScope() != null) {
@@ -179,19 +347,15 @@ public class FlattenMojo extends AbstractMojo {
                                   + type
                                   + (classifier.isEmpty() ? "" : ":" + classifier);
 
+                String gaKey      = artifact.getGroupId() + ":" + artifact.getArtifactId();
                 String incomingVersion = artifact.getBaseVersion();
 
+                // If scope is inherited as test/provided, ensure depth prioritization
                 if (seen.containsKey(key)) {
                     DepEntry existing = seen.get(key);
-
-                    // Always prefer the higher version.
-                    if (compareVersions(incomingVersion, existing.dependency.getVersion()) > 0) {
-                        existing.dependency.setVersion(incomingVersion);
-                    }
-
-                    // Prefer the scope of the shallower (more direct) occurrence.
                     if (depth < existing.depth) {
                         existing.dependency.setScope(artifact.getScope());
+                        existing.dependency.setVersion(incomingVersion);
                         existing.depth = depth;
                     }
                 } else {
@@ -200,19 +364,24 @@ public class FlattenMojo extends AbstractMojo {
                     dep.setArtifactId(artifact.getArtifactId());
                     dep.setVersion(incomingVersion);
                     dep.setScope(artifact.getScope());
-                    if (!classifier.isEmpty()) {
-                        dep.setClassifier(classifier);
+                    dep.setOptional(artifact.isOptional());
+                    
+                    if (!classifier.isEmpty()) dep.setClassifier(classifier);
+                    if (!"jar".equals(type))   dep.setType(type);
+
+                    if (declaredExclusions.containsKey(gaKey)) {
+                        for (Exclusion ex : declaredExclusions.get(gaKey)) {
+                            dep.addExclusion(ex);
+                        }
                     }
-                    if (!"jar".equals(type)) {
-                        dep.setType(type);
-                    }
+
                     seen.put(key, new DepEntry(dep, depth));
                 }
             }
         }
 
         for (DependencyNode child : node.getChildren()) {
-            collectRecursive(child, seen, depth + 1);
+            collectRecursive(child, seen, depth + 1, declaredExclusions);
         }
     }
 
@@ -221,10 +390,11 @@ public class FlattenMojo extends AbstractMojo {
     // -------------------------------------------------------------------------
 
     private int compareVersions(String a, String b) {
+        if (a == null) return -1;
+        if (b == null) return  1;
         String[] partsA = a.split("[.\\-]");
         String[] partsB = b.split("[.\\-]");
         int len = Math.max(partsA.length, partsB.length);
-
         for (int i = 0; i < len; i++) {
             String segA = i < partsA.length ? partsA[i] : "0";
             String segB = i < partsB.length ? partsB[i] : "0";

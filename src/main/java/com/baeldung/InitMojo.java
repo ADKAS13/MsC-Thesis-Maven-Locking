@@ -110,7 +110,13 @@ public class InitMojo extends AbstractMojo {
             // getBaseVersion() normalises SNAPSHOT timestamps back to "X.Y-SNAPSHOT"
             // so the lock file stays stable across repeated builds.
             String concreteVersion = artifact.getBaseVersion();
-            dep.setVersion(toVersionString(concreteVersion, rangeMode));
+            boolean isInternal = artifact.getGroupId().equals(project.getGroupId());
+            boolean isProvided  = "provided".equals(artifact.getScope());
+            boolean isSystem    = "system".equals(artifact.getScope());
+
+
+            boolean applyRange = !isInternal && !isProvided && !isSystem;
+            dep.setVersion(applyRange ? toVersionString(concreteVersion, rangeMode) : concreteVersion);
             dep.setScope(artifact.getScope());
 
             if (artifact.hasClassifier()) {

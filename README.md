@@ -1,5 +1,6 @@
 # Plugin commands
 
+`mvn -Dmaven.repo.local=/home/adkas13/reproducible-central/m2/repository clean install`
 `mvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=`
 -DallowVersionRanges:
 major

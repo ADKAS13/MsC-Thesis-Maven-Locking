@@ -1,0 +1,38 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] AutomataLib                                                        [pom]
+[INFO] AutomataLib :: Commons                                             [pom]
+[INFO] AutomataLib :: Commons :: Utilities                                [jar]
+[INFO] AutomataLib :: API                                                 [jar]
+[INFO] AutomataLib :: Build Tools                                         [jar]
+[INFO] AutomataLib :: Core                                                [jar]
+[INFO] AutomataLib :: Commons :: DOT Utilities                            [jar]
+[INFO] AutomataLib :: Commons :: Smart Collections                        [jar]
+[INFO] AutomataLib :: Utilities                                           [jar]
+[INFO] AutomataLib :: Misc                                                [pom]
+[INFO] AutomataLib :: Misc :: Incremental                                 [jar]
+[INFO] AutomataLib :: Misc :: Misc. Algorithms                            [jar]
+[INFO] AutomataLib :: Adapters                                            [pom]
+[INFO] AutomataLib :: Adapters :: BRICS                                   [jar]
+[INFO] AutomataLib :: Examples                                            [jar]
+[INFO] AutomataLib :: Visualization                                       [pom]
+[INFO] AutomataLib :: Visualization :: JUNG Visualizer                    [jar]
+[INFO] AutomataLib :: Serialization                                       [pom]
+[INFO] AutomataLib :: Serialization :: Core                               [jar]
+[INFO] AutomataLib :: Serialization :: SAF                                [jar]
+[INFO] AutomataLib :: Serialization :: TAF                                [jar]
+[INFO] AutomataLib :: Serialization :: LearnLibV2                         [jar]
+[INFO] AutomataLib :: Archetypes                                          [pom]
+[INFO] AutomataLib :: Archetypes :: Core                      [maven-archetype]
+[INFO] AutomataLib :: Archetypes :: Typical                   [maven-archetype]
+[INFO] AutomataLib :: Archetypes :: Complete                  [maven-archetype]
+[INFO] AutomataLib :: Distribution                                        [pom]
+[INFO] 
+[INFO] ------------------< net.automatalib:automata-parent >-------------------
+[INFO] Building AutomataLib 0.6.1-SNAPSHOT                               [1/27]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.6.1:tree (default-cli) @ automata-parent ---
