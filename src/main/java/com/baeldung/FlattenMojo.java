@@ -25,12 +25,18 @@ import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Mojo(name = "flatten")
 public class FlattenMojo extends AbstractMojo {
+
+    private static final Pattern PROPERTY_PATTERN = Pattern.compile("^\\$\\{([^}]+)\\}$");
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
@@ -155,7 +161,7 @@ public class FlattenMojo extends AbstractMojo {
             }
 
             // ------------------------------------------------------------------
-            // 5. Write flattened deps + comparison report
+            // 5. Process properties and dependency versions
             // ------------------------------------------------------------------
             getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId());
 
@@ -165,6 +171,43 @@ public class FlattenMojo extends AbstractMojo {
             writeFlattenedSnapshot(flattenedDeps);
             writeComparisonReport(beforeDeps, flattenedDeps);
 
+            // Map declared versions from original pom.xml to preserve property expressions
+            Map<String, String> declaredVersionsMap = new HashMap<>();
+            if (targetModel.getDependencies() != null) {
+                for (Dependency d : targetModel.getDependencies()) {
+                    if (d.getVersion() != null) {
+                        declaredVersionsMap.put(d.getGroupId() + ":" + d.getArtifactId(), d.getVersion());
+                    }
+                }
+            }
+
+            Properties targetProperties = targetModel.getProperties();
+            if (targetProperties == null) {
+                targetProperties = new Properties();
+            }
+
+            for (Dependency dep : flattenedDeps) {
+                String gaKey = dep.getGroupId() + ":" + dep.getArtifactId();
+                String originalVersionExpr = declaredVersionsMap.get(gaKey);
+
+                if (originalVersionExpr != null) {
+                    Matcher matcher = PROPERTY_PATTERN.matcher(originalVersionExpr.trim());
+                    if (matcher.matches()) {
+                        String propName = matcher.group(1);
+                        // Case A: Property is defined directly in this POM -> update the property value
+                        if (targetProperties.containsKey(propName)) {
+                            targetProperties.setProperty(propName, dep.getVersion());
+                            dep.setVersion(originalVersionExpr);
+                        } 
+                        // Case B: Property is inherited -> keep expression so it resolves via parent
+                        else {
+                            dep.setVersion(originalVersionExpr);
+                        }
+                    }
+                }
+            }
+
+            targetModel.setProperties(targetProperties);
             targetModel.setDependencies(flattenedDeps);
 
             // ------------------------------------------------------------------
