@@ -64,7 +64,7 @@ public class InitMojo extends AbstractMojo {
     private File depTreeSnapshotFile;
 
     /** Sentinel used as "infinity" for numeric version segments. */
-    private static final String INF = String.valueOf(Integer.MAX_VALUE);
+    // private static final String INF = String.valueOf(Integer.MAX_VALUE);
 
     @Override
     public void execute() throws MojoExecutionException {
@@ -217,21 +217,19 @@ public class InitMojo extends AbstractMojo {
             return version;
         }
 
-        String major = parts[0];
-        String minor = parts.length > 1 ? parts[1] : "0";
-
+        int majorNum, minorNum;
+        try {
+            majorNum = Integer.parseInt(parts[0]);
+            minorNum = Integer.parseInt(parts[1]);
+        } catch (NumberFormatException e) {
+            getLog().warn("Non-numeric version segment in '" + version + "' — falling back to pinned.");
+            return version;
+        }
         switch (mode) {
-            case MAJOR:
-                return "[" + version + ",)";
-
-            case MINOR:
-                return "[" + version + ", " + major + "." + INF + "." + INF + ")";
-
-            case PATCH:
-                return "[" + version + ", " + major + "." + minor + "." + INF + ")";
-
-            default:
-                return version;
+            case MAJOR: return "[" + version + ",)";
+            case MINOR: return "[" + version + "," + (majorNum + 1) + ".0.0-alpha)";
+            case PATCH: return "[" + version + "," + majorNum + "." + (minorNum + 1) + ".0-alpha)";
+            default:    return version;
         }
     }
 
