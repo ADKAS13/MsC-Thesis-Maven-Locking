@@ -1,5 +1,6 @@
 package com.baeldung;
 
+import org.apache.maven.artifact.Artifact;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.model.Dependency;
 import org.apache.maven.model.Exclusion;
@@ -11,25 +12,31 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.plugins.annotations.ResolutionScope;
+import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.ProjectBuildingRequest;
-import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.shared.dependency.graph.DependencyGraphBuilder;
 import org.apache.maven.shared.dependency.graph.DependencyNode;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-@Mojo(name = "flatten")
+// requiresDependencyResolution = TEST makes project.getArtifacts() the complete, effective
+// artifact set Maven itself resolves for the unmodified project; it is the comparison baseline.
+@Mojo(name = "flatten", requiresDependencyResolution = ResolutionScope.TEST)
 public class FlattenMojo extends AbstractMojo {
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
@@ -52,49 +59,35 @@ public class FlattenMojo extends AbstractMojo {
                 return;
             }
 
-            // Map declared exclusions from the current project model
-            Map<String, List<Exclusion>> declaredExclusions = new LinkedHashMap<>();
-            if (project.getDependencies() != null) {
-                for (Object obj : project.getDependencies()) {
-                    if (obj instanceof Dependency) {
-                        Dependency d = (Dependency) obj;
-                        if (d.getExclusions() != null && !d.getExclusions().isEmpty()) {
-                            String ga = d.getGroupId() + ":" + d.getArtifactId();
-                            declaredExclusions.put(ga, d.getExclusions());
-                        }
-                    }
-                }
-            }
-
             // ------------------------------------------------------------------
-            // 1. Resolve baseline original dependency graph
+            // 1. Baseline: what Maven itself resolves for the unmodified project
             // ------------------------------------------------------------------
-            ProjectBuildingRequest baselineRequest =
-                new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
-            baselineRequest.setProject(project);
-            baselineRequest.setRemoteRepositories(project.getRemoteArtifactRepositories());
-
-            DependencyNode baselineRoot = dependencyGraphBuilder.buildDependencyGraph(baselineRequest, null);
-            Map<String, DepEntry> baselineResolved = new LinkedHashMap<>();
-            collectRecursive(baselineRoot, baselineResolved, 0, declaredExclusions);
+            @SuppressWarnings("unchecked")
+            Set<Artifact> baselineArtifacts = (Set<Artifact>) project.getArtifacts();
 
             List<Dependency> beforeDeps = new ArrayList<>();
-            for (DepEntry entry : baselineResolved.values()) {
-                beforeDeps.add(entry.dependency);
+            for (Artifact artifact : baselineArtifacts) {
+                if (artifact.getScope() == null) {
+                    continue;
+                }
+                Dependency dep = new Dependency();
+                dep.setGroupId(artifact.getGroupId());
+                dep.setArtifactId(artifact.getArtifactId());
+                dep.setVersion(artifact.getBaseVersion());
+                dep.setScope(artifact.getScope());
+                beforeDeps.add(dep);
             }
 
             // ------------------------------------------------------------------
-            // 2. Clone project and (optionally) resolve ranges
+            // 2. Clone project and apply everything pom.deps.xml says about resolution:
+            //    the dependency list (with ranges and exclusions) and dependencyManagement
             // ------------------------------------------------------------------
             MavenProject resolutionProject = (MavenProject) project.clone();
+            boolean hasDepsFile = pomDepsFile.exists();
 
-            if (pomDepsFile.exists()) {
-                getLog().info("Found pom.deps.xml — reading configured version ranges...");
-                MavenXpp3Reader depsReader = new MavenXpp3Reader();
-                try (FileReader fr = new FileReader(pomDepsFile)) {
-                    Model depsModel = depsReader.read(fr);
-                    resolutionProject.setDependencies(depsModel.getDependencies());
-                }
+            if (hasDepsFile) {
+                getLog().info("Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...");
+                applyDepsModel(resolutionProject, readDepsModel(pomDepsFile), false);
             } else {
                 getLog().warn("No pom.deps.xml found — using default project dependency resolution.");
             }
@@ -117,15 +110,8 @@ public class FlattenMojo extends AbstractMojo {
                 getLog().warn("[LOCK-PLUGIN] Range resolution failed for " + project.getArtifactId()
                         + " — falling back to pinned lower bounds: " + e.getMessage());
 
-                if (pomDepsFile.exists()) {
-                    MavenXpp3Reader fallbackReader = new MavenXpp3Reader();
-                    try (FileReader fr = new FileReader(pomDepsFile)) {
-                        Model depsModel = fallbackReader.read(fr);
-                        for (Dependency dep : depsModel.getDependencies()) {
-                            dep.setVersion(extractLowerBound(dep.getVersion()));
-                        }
-                        resolutionProject.setDependencies(depsModel.getDependencies());
-                    }
+                if (hasDepsFile) {
+                    applyDepsModel(resolutionProject, readDepsModel(pomDepsFile), true);
                     resolutionProject.setArtifacts(null);
                     resolutionProject.setDependencyArtifacts(null);
                     rootNode = dependencyGraphBuilder.buildDependencyGraph(buildingRequest, null);
@@ -135,11 +121,25 @@ public class FlattenMojo extends AbstractMojo {
             }
 
             Map<String, DepEntry> allResolved = new LinkedHashMap<>();
-            collectRecursive(rootNode, allResolved, 0, declaredExclusions);
+            collectRecursive(rootNode, allResolved, 0);
+
+            // Exclusions in force for each artifact of the resolved graph. Every flattened
+            // dependency is written with them, so the flattened POM resolves the same way
+            // when it is built, not just while this goal runs.
+            Map<String, List<Exclusion>> effectiveExclusions = ResolutionSupport.effectiveExclusions(rootNode);
 
             List<Dependency> flattenedDeps = new ArrayList<>();
-            for (DepEntry entry : allResolved.values()) {
-                flattenedDeps.add(entry.dependency);
+            int withExclusions = 0;
+            for (Map.Entry<String, DepEntry> entry : allResolved.entrySet()) {
+                Dependency dep = entry.getValue().dependency;
+                List<Exclusion> exclusions = effectiveExclusions.get(entry.getKey());
+                if (exclusions != null && !exclusions.isEmpty()) {
+                    for (Exclusion exclusion : exclusions) {
+                        dep.addExclusion(exclusion.clone());
+                    }
+                    withExclusions++;
+                }
+                flattenedDeps.add(dep);
             }
 
             // ------------------------------------------------------------------
@@ -155,9 +155,42 @@ public class FlattenMojo extends AbstractMojo {
             }
 
             // ------------------------------------------------------------------
+            // 4b. A system-scoped dependency is invalid without <systemPath>, and the resolved
+            //     graph does not carry it. Take it from the declared dependencies: the
+            //     resolution project's (pom.deps.xml, or the project's own when there is no
+            //     deps file) first, then the raw pom.xml entry, which wins because it still
+            //     holds the uninterpolated, portable value (e.g. ${project.basedir}/lib/x.jar).
+            // ------------------------------------------------------------------
+            Map<String, Dependency> declared = new HashMap<>();
+            // Older maven-core versions return a raw List, hence Object + cast.
+            for (Object obj : resolutionProject.getDependencies()) {
+                if (obj instanceof Dependency) {
+                    Dependency d = (Dependency) obj;
+                    declared.put(ResolutionSupport.key(d), d);
+                }
+            }
+            for (Dependency d : targetModel.getDependencies()) {
+                declared.put(ResolutionSupport.key(d), d);
+            }
+            for (Map.Entry<String, DepEntry> entry : allResolved.entrySet()) {
+                Dependency dep = entry.getValue().dependency;
+                if (!"system".equals(dep.getScope())) {
+                    continue;
+                }
+                Dependency original = declared.get(entry.getKey());
+                if (original != null && original.getSystemPath() != null) {
+                    dep.setSystemPath(original.getSystemPath());
+                } else {
+                    getLog().warn("[LOCK-PLUGIN] No systemPath found for system-scoped dependency "
+                            + entry.getKey() + " — the flattened POM will be invalid.");
+                }
+            }
+
+            // ------------------------------------------------------------------
             // 5. Write flattened deps + comparison report
             // ------------------------------------------------------------------
-            getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId());
+            getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId()
+                    + " (" + flattenedDeps.size() + " dependencies, " + withExclusions + " carrying exclusions)");
 
             flattenedDeps.sort(Comparator.comparing(Dependency::getGroupId)
                                          .thenComparing(Dependency::getArtifactId));
@@ -182,6 +215,31 @@ public class FlattenMojo extends AbstractMojo {
             throw e;
         } catch (Exception e) {
             throw new MojoExecutionException("Error during flattening process: " + e.getMessage(), e);
+        }
+    }
+
+    private Model readDepsModel(File pomDepsFile) throws IOException, org.codehaus.plexus.util.xml.pull.XmlPullParserException {
+        try (FileReader fr = new FileReader(pomDepsFile)) {
+            return new MavenXpp3Reader().read(fr);
+        }
+    }
+
+    /**
+     * Makes the resolution project resolve from pom.deps.xml: its dependencies (including
+     * exclusions) and, when present, its dependencyManagement. Repositories are left as the
+     * project's own, since the graph requests already use them.
+     */
+    private void applyDepsModel(MavenProject target, Model depsModel, boolean pinToLowerBounds) {
+        List<Dependency> deps = depsModel.getDependencies();
+        if (pinToLowerBounds) {
+            for (Dependency dep : deps) {
+                dep.setVersion(extractLowerBound(dep.getVersion()));
+            }
+        }
+        target.setDependencies(deps);
+
+        if (depsModel.getDependencyManagement() != null) {
+            target.getModel().setDependencyManagement(depsModel.getDependencyManagement());
         }
     }
 
@@ -332,22 +390,14 @@ public class FlattenMojo extends AbstractMojo {
         }
     }
 
-    private void collectRecursive(DependencyNode node,
-                                  Map<String, DepEntry> seen,
-                                  int depth,
-                                  Map<String, List<Exclusion>> declaredExclusions) {
+    private void collectRecursive(DependencyNode node, Map<String, DepEntry> seen, int depth) {
         if (node.getParent() != null) {
             org.apache.maven.artifact.Artifact artifact = node.getArtifact();
 
             if (artifact.getScope() != null) {
                 String type       = artifact.getType() != null ? artifact.getType() : "jar";
                 String classifier = artifact.hasClassifier() ? artifact.getClassifier() : "";
-                String key        = artifact.getGroupId() + ":"
-                                  + artifact.getArtifactId() + ":"
-                                  + type
-                                  + (classifier.isEmpty() ? "" : ":" + classifier);
-
-                String gaKey      = artifact.getGroupId() + ":" + artifact.getArtifactId();
+                String key        = ResolutionSupport.key(artifact);
                 String incomingVersion = artifact.getBaseVersion();
 
                 // If scope is inherited as test/provided, ensure depth prioritization
@@ -365,15 +415,9 @@ public class FlattenMojo extends AbstractMojo {
                     dep.setVersion(incomingVersion);
                     dep.setScope(artifact.getScope());
                     dep.setOptional(artifact.isOptional());
-                    
+
                     if (!classifier.isEmpty()) dep.setClassifier(classifier);
                     if (!"jar".equals(type))   dep.setType(type);
-
-                    if (declaredExclusions.containsKey(gaKey)) {
-                        for (Exclusion ex : declaredExclusions.get(gaKey)) {
-                            dep.addExclusion(ex);
-                        }
-                    }
 
                     seen.put(key, new DepEntry(dep, depth));
                 }
@@ -381,7 +425,7 @@ public class FlattenMojo extends AbstractMojo {
         }
 
         for (DependencyNode child : node.getChildren()) {
-            collectRecursive(child, seen, depth + 1, declaredExclusions);
+            collectRecursive(child, seen, depth + 1);
         }
     }
 
