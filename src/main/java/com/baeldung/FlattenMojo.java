@@ -39,8 +39,6 @@ import java.util.Set;
 @Mojo(name = "flatten", requiresDependencyResolution = ResolutionScope.TEST)
 public class FlattenMojo extends AbstractMojo {
 
-    private static final Pattern PROPERTY_PATTERN = Pattern.compile("^\\$\\{([^}]+)\\}$");
-
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
 
@@ -189,38 +187,6 @@ public class FlattenMojo extends AbstractMojo {
             }
 
             // ------------------------------------------------------------------
-            // 4b. A system-scoped dependency is invalid without <systemPath>, and the resolved
-            //     graph does not carry it. Take it from the declared dependencies: the
-            //     resolution project's (pom.deps.xml, or the project's own when there is no
-            //     deps file) first, then the raw pom.xml entry, which wins because it still
-            //     holds the uninterpolated, portable value (e.g. ${project.basedir}/lib/x.jar).
-            // ------------------------------------------------------------------
-            Map<String, Dependency> declared = new HashMap<>();
-            // Older maven-core versions return a raw List, hence Object + cast.
-            for (Object obj : resolutionProject.getDependencies()) {
-                if (obj instanceof Dependency) {
-                    Dependency d = (Dependency) obj;
-                    declared.put(ResolutionSupport.key(d), d);
-                }
-            }
-            for (Dependency d : targetModel.getDependencies()) {
-                declared.put(ResolutionSupport.key(d), d);
-            }
-            for (Map.Entry<String, DepEntry> entry : allResolved.entrySet()) {
-                Dependency dep = entry.getValue().dependency;
-                if (!"system".equals(dep.getScope())) {
-                    continue;
-                }
-                Dependency original = declared.get(entry.getKey());
-                if (original != null && original.getSystemPath() != null) {
-                    dep.setSystemPath(original.getSystemPath());
-                } else {
-                    getLog().warn("[LOCK-PLUGIN] No systemPath found for system-scoped dependency "
-                            + entry.getKey() + " — the flattened POM will be invalid.");
-                }
-            }
-
-            // ------------------------------------------------------------------
             // 5. Write flattened deps + comparison report
             // ------------------------------------------------------------------
             getLog().info("Flattening leaf module dependencies for: " + project.getArtifactId()
@@ -232,43 +198,6 @@ public class FlattenMojo extends AbstractMojo {
             writeFlattenedSnapshot(flattenedDeps);
             writeComparisonReport(beforeDeps, flattenedDeps);
 
-            // Map declared versions from original pom.xml to preserve property expressions
-            Map<String, String> declaredVersionsMap = new HashMap<>();
-            if (targetModel.getDependencies() != null) {
-                for (Dependency d : targetModel.getDependencies()) {
-                    if (d.getVersion() != null) {
-                        declaredVersionsMap.put(d.getGroupId() + ":" + d.getArtifactId(), d.getVersion());
-                    }
-                }
-            }
-
-            Properties targetProperties = targetModel.getProperties();
-            if (targetProperties == null) {
-                targetProperties = new Properties();
-            }
-
-            for (Dependency dep : flattenedDeps) {
-                String gaKey = dep.getGroupId() + ":" + dep.getArtifactId();
-                String originalVersionExpr = declaredVersionsMap.get(gaKey);
-
-                if (originalVersionExpr != null) {
-                    Matcher matcher = PROPERTY_PATTERN.matcher(originalVersionExpr.trim());
-                    if (matcher.matches()) {
-                        String propName = matcher.group(1);
-                        // Case A: Property is defined directly in this POM -> update the property value
-                        if (targetProperties.containsKey(propName)) {
-                            targetProperties.setProperty(propName, dep.getVersion());
-                            dep.setVersion(originalVersionExpr);
-                        } 
-                        // Case B: Property is inherited -> keep expression so it resolves via parent
-                        else {
-                            dep.setVersion(originalVersionExpr);
-                        }
-                    }
-                }
-            }
-
-            targetModel.setProperties(targetProperties);
             targetModel.setDependencies(flattenedDeps);
 
             // ------------------------------------------------------------------
