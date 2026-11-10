@@ -1,4 +1,7 @@
-com/baeldung/InitMojo$VersionRangeMode.class
-com/baeldung/InitMojo.class
 com/baeldung/FlattenMojo$DepEntry.class
+com/baeldung/ResolutionSupport.class
+com/baeldung/InitMojo$VersionRangeMode.class
+com/baeldung/RangeTestMojo.class
+com/baeldung/InitMojo.class
+com/baeldung/RangeTestMojo$VersionRangeMode.class
 com/baeldung/FlattenMojo.class

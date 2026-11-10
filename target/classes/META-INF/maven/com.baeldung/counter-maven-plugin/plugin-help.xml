@@ -12,6 +12,7 @@
   <mojos>
     <mojo>
       <goal>flatten</goal>
+      <requiresDependencyResolution>test</requiresDependencyResolution>
       <requiresDirectInvocation>false</requiresDirectInvocation>
       <requiresProject>true</requiresProject>
       <requiresReports>false</requiresReports>
@@ -48,15 +49,59 @@
           <description>File destination for storing the pre-flatten dependency tree snapshot.</description>
         </parameter>
         <parameter>
+          <name>pruneDependencyManagement</name>
+          <type>boolean</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>When true, only the dependencyManagement entries for artifacts that are part of the resolved set are copied into pom.deps.xml. The default (false) copies the whole effective dependencyManagement, which is what lets range resolution in the flatten step still honour management for artifacts that a newer version brings in.</description>
+        </parameter>
+        <parameter>
           <name>useVersionRanges</name>
           <type>java.lang.String</type>
           <required>false</required>
           <editable>true</editable>
-          <description>Controls whether versions are written as Maven version ranges instead of pinned concrete versions. The lower bound is always the resolved version. Accepted values: (unset / empty) — concrete pinned version, e.g. 9.4.2 (default) major — allows major, allows minor+patch: [9.4.2,) minor — allows minor+patch: [9.4.2, 9.999999.999999) patch — allows patch: [9.4.2, 9.4.999999) Usage: -DallowVersionRanges=minor</description>
+          <description>Controls whether versions are written as Maven version ranges instead of pinned concrete versions. The lower bound is always the resolved version. Accepted values: (unset / empty) — concrete pinned version, e.g. 9.4.2 (default) major — allows major, allows minor+patch: [9.4.2,) minor — allows minor+patch: [9.4.2, 10.0.0-alpha) patch — allows patch: [9.4.2, 9.5.0-alpha) Usage: -DallowVersionRanges=minor</description>
         </parameter>
       </parameters>
       <configuration>
         <depTreeSnapshotFile implementation="java.io.File" default-value="${project.build.directory}/dependency-tree-before.txt">${depTreeSnapshotFile}</depTreeSnapshotFile>
+        <pruneDependencyManagement implementation="boolean" default-value="false">${pruneDependencyManagement}</pruneDependencyManagement>
+        <useVersionRanges implementation="java.lang.String" default-value="">${allowVersionRanges}</useVersionRanges>
+      </configuration>
+    </mojo>
+    <mojo>
+      <goal>range-test</goal>
+      <description>A test Mojo that replaces the project&apos;s dependencies in-place inside pom.xml with version-ranged or pinned bounds derived from the baseline build artifacts, while strictly preserving the original dependency declaration order.</description>
+      <requiresDependencyResolution>test</requiresDependencyResolution>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <implementation>com.baeldung.RangeTestMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <threadSafe>false</threadSafe>
+      <parameters>
+        <parameter>
+          <name>pruneDependencyManagement</name>
+          <type>boolean</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>useVersionRanges</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <pruneDependencyManagement implementation="boolean" default-value="false">${pruneDependencyManagement}</pruneDependencyManagement>
         <useVersionRanges implementation="java.lang.String" default-value="">${allowVersionRanges}</useVersionRanges>
       </configuration>
     </mojo>
